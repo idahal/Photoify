@@ -6,19 +6,27 @@
           <rect y="20.3999" width="36" height="3.0" rx="1.8" fill="#ffffff"/>
         </svg>
       </span>
-<a href="#" class="logo">Photoify</a>
+      <a href="#" class="logo">Photoify</a>
         <ul class="main-nav" id="js-menu">
             <li>
-                <a class="nav-link" href="/index.php">Home</a>
+                <?php if (isset($_SESSION['user'])): ?>
+                    <a class="nav-link" href="/userpage.php">The gallery</a>
+                <?php else: ?>
+                    <a class="nav-link" href="/index.php">Home</a>
+                <?php endif; ?>
             </li>
             <li>
-                 <a class="nav-link" href="/about.php">About</a>
+                <?php if (isset($_SESSION['user'])): ?>
+                    <a class="nav-link" href="/mypage.php">My page</a>
+                <?php else: ?>
+                    <a class="nav-link" href="/about.php">About</a>
+                <?php endif; ?>
             </li>
             <li>
                 <?php if (isset($_SESSION['user'])): ?>
                     <a class="nav-link" href="app\users\logout.php">Logout</a>
                 <?php else: ?>
-                    <a class="nav-link" href="/login.php">Login</a>
+                    <a class="nav-link" href="/">Login</a>
                 <?php endif; ?>
             </li>
         </ul>
