@@ -10,7 +10,7 @@
         <ul class="main-nav" id="js-menu">
             <li>
                 <?php if (isset($_SESSION['user'])): ?>
-                    <a class="nav-link" href="/userpage.php">The gallery</a>
+                    <a class="nav-link" href="/">The gallery</a>
                 <?php else: ?>
                     <a class="nav-link" href="/index.php">Home</a>
                 <?php endif; ?>
