@@ -24,7 +24,12 @@
             </li>
             <li>
                 <?php if (isset($_SESSION['user'])): ?>
-                    <a class="nav-link" href="app\users\logout.php">Logout</a>
+                    <a class="nav-link" href="/settings.php">Account settings</a>
+                <?php endif; ?>
+            </li>
+            <li>
+                <?php if (isset($_SESSION['user'])): ?>
+                    <a class="nav-link" href="app/users/logout.php">Logout</a>
                 <?php else: ?>
                     <a class="nav-link" href="/">Login</a>
                 <?php endif; ?>
