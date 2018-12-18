@@ -1,15 +1,13 @@
 <?php require __DIR__.'/views/header.php'; ?>
 
 <article>
-
     <?php
-    // If user is logged in
+    // If  the user is logged in
     if(isset($_SESSION['user'])):  ?>
-
     <?php require __DIR__.'/home.php'; ?>
 
     <?php
-    //If user is not logged in
+    //If the user is not logged in
     else: ?>
         <?php require __DIR__.'/start.php'; ?>
     <?php endif; ?>
