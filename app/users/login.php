@@ -1,6 +1,6 @@
 <?php
-
 declare(strict_types=1);
+
 
 require __DIR__.'/../autoload.php';
 //check if user post data
@@ -27,13 +27,17 @@ if($email === '' || $password === ''){
     $errors[]= 'You must enter the fields';
 };
 if (password_verify($_POST['password'], $user['password'])){
-    $_SESSION['user'] = $user;
-    redirect('/home.php');
+    $_SESSION['user'] = [
+    'user_id' =>  $user['user_id'],
+    'first_name' => $user['first_name'],
+    'last_name' => $user['last_name'],
+    'profile_pic' => $user['profile_pic'],
+    'bio' => $user['bio'],
+];
+    redirect('/');
 } else {
     redirect('/');
 }
-};
+}
 
 require __DIR__.'/../autoload.php';
-
-// In this file we login users.
