@@ -27,14 +27,15 @@
     <div class="bio">
         <p>Firstame: <?php echo $_SESSION['user']['first_name']; ?></p>
         <p>Laststame: <?php echo $_SESSION['user']['last_name']; ?></p>
-        <p>Biography</p>
+        <p>Biography: <?php echo $_SESSION['user']['bio']; ?></</p>
         <form class="add-bio" action="app/users/bio.php" method="post">
                 <div class="form-group">
                     <p>
-                      <label>Add bio</label><br>
+                      <label>Write something about you</label><br>
                       <input type="text" name="bio">
                     </p>
-                </div><!-- /form-group -->
+                </div>
+                <!-- form-group -->
                 <button type="submit" class="bio-button">Add</button>
             </form>
         </div>

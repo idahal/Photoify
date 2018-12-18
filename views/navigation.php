@@ -29,6 +29,11 @@
             </li>
             <li>
                 <?php if (isset($_SESSION['user'])): ?>
+                    <a class="nav-link" href="/password.php">Change password</a>
+                <?php endif; ?>
+            </li>
+            <li>
+                <?php if (isset($_SESSION['user'])): ?>
                     <a class="nav-link" href="app/users/logout.php">Logout</a>
                 <?php else: ?>
                     <a class="nav-link" href="/">Login</a>

@@ -13,20 +13,24 @@
         <label>Change last name</label><br>
         <input type="text" value="<?php echo $user['last_name'] ?>" name="last_name" id=last_name>
       </p>
+      <!-- <p>
+        <label>Change biography</label><br>
+        <input type="text" value="<?php echo $user['bio'] ?>" name="last_name" id=last_name>
+      </p> -->
       <p>
         <label>Change email</label><br>
         <input type="email" value="<?php echo $user['email'] ?>" name="email" required id=email>
       </p>
-      <p>
+      <!-- <p>
         <label>New password</label><br>
         <input type="password" name="password" id=password>
       </p>
       <p>
         <label>Confirm new password</label><br>
         <input type="password" name="confirm_password">
-      </p>
+      </p> -->
       <p>
-        <button class="sign-up">Update</button>
+        <button type="submit" class="sign-up">Update</button>
      </p>
 
     </form>
