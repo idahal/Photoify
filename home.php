@@ -7,4 +7,38 @@
     <?php if (isset($_SESSION['user'])): ?>
        <p>Welcome, <?php echo $_SESSION['user']['first_name']; ?>!</p>
    <?php endif; ?>
+<br><br><br>
+
+<?php $statement = $pdo->prepare('SELECT * FROM posts;');
+$statement->execute();
+$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+// die(var_dump($posts));
+?>
+<div class="gallery-page">
+    <form action="app/posts/store.php" method="post" enctype="multipart/form-data">
+             <div>
+                 <p><label for="images">Upload image</label></p>
+                 <input type="file"  value="upload file" name="post" id="images" accept=".png, .jpeg, .jpg" multiple required>
+             </div><br>
+             <div class="form-group">
+                 <p>
+                     <label>Add text</label><br>
+                     <input type="text" name="content">
+                 </p>
+             </div>
+             <button type="submit">Upload</button>
+         </form>
+         <br>
+    <?php foreach ($posts as $post): ?>
+        <br>
+    <img style="width: 150px; height: 150px;" class="gallery-pics" src="<?php echo $post['post']?>" alt="photoify">
+    <br>
+    <p><?php echo $post['content']?></p>
+    <?php endforeach; ?>
+    <br>
+</div>
 </article>
+
+
+<!-- // for loop/foreach
+//fetchAll -->

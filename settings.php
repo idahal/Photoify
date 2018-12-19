@@ -13,10 +13,10 @@
         <label>Change last name</label><br>
         <input type="text" value="<?php echo $user['last_name'] ?>" name="last_name" id=last_name>
       </p>
-      <!-- <p>
+      <p>
         <label>Change biography</label><br>
-        <input type="text" value="<?php echo $user['bio'] ?>" name="last_name" id=last_name>
-      </p> -->
+        <input type="text" value="<?php echo $user['bio'] ?>" name="bio" id=bio>
+      </p>
       <p>
         <label>Change email</label><br>
         <input type="email" value="<?php echo $user['email'] ?>" name="email" required id=email>

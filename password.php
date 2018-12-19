@@ -4,7 +4,7 @@
 
 <article>
     <form class="create-account" action="app/users/password.php" method="post">
-        <h1>Update my account</h1>
+        <h1>Change password</h1>
 
 <p>
   <label>New password</label><br>

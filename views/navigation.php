@@ -24,7 +24,7 @@
             </li>
             <li>
                 <?php if (isset($_SESSION['user'])): ?>
-                    <a class="nav-link" href="/settings.php">Account settings</a>
+                    <a class="nav-link" href="/settings.php">My settings</a>
                 <?php endif; ?>
             </li>
             <li>

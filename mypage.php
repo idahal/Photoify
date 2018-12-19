@@ -28,7 +28,7 @@
         <p>Firstame: <?php echo $_SESSION['user']['first_name']; ?></p>
         <p>Laststame: <?php echo $_SESSION['user']['last_name']; ?></p>
         <p>Biography: <?php echo $_SESSION['user']['bio']; ?></</p>
-        <form class="add-bio" action="app/users/bio.php" method="post">
+        <!-- <form class="add-bio" action="app/users/bio.php" method="post">
                 <div class="form-group">
                     <p>
                       <label>Write something about you</label><br>
@@ -36,8 +36,8 @@
                     </p>
                 </div>
                 <!-- form-group -->
-                <button type="submit" class="bio-button">Add</button>
-            </form>
+                <!-- <button type="submit" class="bio-button">Add</button>
+            </form> -->
         </div>
 </div>
 </article>

@@ -20,7 +20,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
  print_r($user);
 // if the email don`t exits in the database
 if (!$user) {
-    $errors[]= 'You must enter the fields';
+    $errors[]= 'User do not exists';
     redirect('/');
 }
 if($email === '' || $password === ''){
@@ -34,7 +34,11 @@ if (password_verify($_POST['password'], $user['password'])){
     'profile_pic' => $user['profile_pic'],
     'email'=> $user['email'],
     'bio' => $user['bio'],
-];
+    'post_id' => $user['post_id'],
+    'post' => $user['post'],
+    'date' => $user['date'],
+    'content' => $user['content'],
+    ];
     redirect('/');
 } else {
     redirect('/');
