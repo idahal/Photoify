@@ -34,8 +34,8 @@ if (isset($_POST['content'],$_FILES['post'])) {
 
         $statement = $pdo->prepare(
        'INSERT INTO posts (post, date, content)
-        VALUES (:post, :date, :content);'
-      );
+        VALUES (:post, :date, :content);');
+
      $statement->bindParam(':post', $fileName, PDO::PARAM_STR);
      $statement->bindParam(':date', $date, PDO::PARAM_STR);
      $statement->bindParam(':content', $content, PDO::PARAM_STR);

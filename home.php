@@ -1,3 +1,4 @@
+
 <article class="homepage">
     <!-- <h1><?php echo $config['title']; ?></h1> -->
     <h1>This is the gallery page.</h1>
