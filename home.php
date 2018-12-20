@@ -31,7 +31,7 @@ $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
          <br>
     <?php foreach ($posts as $post): ?>
         <br>
-    <img style="width: 150px; height: 150px;" class="gallery-pics" src="<?php echo $post['post']?>" alt="photoify">
+    <img style="width: 150px; height: 150px;" class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
     <br>
     <p><?php echo $post['content']?></p>
     <?php endforeach; ?>
