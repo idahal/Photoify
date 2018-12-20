@@ -13,7 +13,13 @@
 <?php $statement = $pdo->prepare('SELECT * FROM posts;');
 $statement->execute();
 $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
-// die(var_dump($posts));
+
+// try join//
+// $statement = $pdo->prepare('SELECT * FROM `posts` AS p INNER JOIN `users` AS u ON u.user_id = p.user_id;');
+// $statement->execute();
+// $postnames = $statement->fetchAll(PDO::FETCH_ASSOC);
+// foreach ($postnames as $name) {
+// }
 ?>
 <div class="gallery-page">
     <form action="app/posts/store.php" method="post" enctype="multipart/form-data">

@@ -5,11 +5,13 @@ declare(strict_types=1);
 require __DIR__.'/../autoload.php';
 
 
+
 $errors = [];
 
 // In this file we store/insert new posts in the database.
 if (isset($_POST['content'],$_FILES['post'])) {
     $post = $_FILES['post'];
+    $userId = $_SESSION['user']['user_id'];
     $content = trim(filter_var($_POST['content'],FILTER_SANITIZE_STRING));
     $date = date('Y-m-d H:i:s');
 
@@ -33,12 +35,13 @@ if (isset($_POST['content'],$_FILES['post'])) {
         move_uploaded_file($post['tmp_name'], $destination);
 
         $statement = $pdo->prepare(
-       'INSERT INTO posts (post, date, content)
-        VALUES (:post, :date, :content);');
+       'INSERT INTO posts (post, date, content, user_id)
+        VALUES (:post, :date, :content, :user_id);');
 
      $statement->bindParam(':post', $fileName, PDO::PARAM_STR);
      $statement->bindParam(':date', $date, PDO::PARAM_STR);
      $statement->bindParam(':content', $content, PDO::PARAM_STR);
+     $statement->bindParam(':user_id', $userId, PDO::PARAM_INT);
 
      $statement->execute();
      redirect('/');
