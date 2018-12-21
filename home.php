@@ -6,21 +6,11 @@
 
 <!-- if the user is logged in create a welcome message -->
     <?php if (isset($_SESSION['user'])): ?>
-       <p>Welcome, <?php echo $_SESSION['user']['first_name']; ?>!</p>
+       <p>Welcome, <?php echo $_SESSION['user']['first_name'],$_SESSION['user']['last_name']; ?>!</p>
    <?php endif; ?>
 <br><br><br>
 
-<?php $statement = $pdo->prepare('SELECT * FROM posts;');
-$statement->execute();
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-// try join//
-// $statement = $pdo->prepare('SELECT * FROM `posts` AS p INNER JOIN `users` AS u ON u.user_id = p.user_id;');
-// $statement->execute();
-// $postnames = $statement->fetchAll(PDO::FETCH_ASSOC);
-// foreach ($postnames as $name) {
-// }
-?>
 <div class="gallery-page">
     <form action="app/posts/store.php" method="post" enctype="multipart/form-data">
              <div>
@@ -36,14 +26,23 @@ $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
              <button type="submit">Upload</button>
          </form>
          <br>
+
+<?php
+    $statement = $pdo->prepare('SELECT a.post, a.content, c.first_name, c.last_name FROM posts a
+        LEFT JOIN users c ON a.user_id=c.user_id;');
+        $statement->execute();
+        $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+        // die(var_dump($posts));
+ ?>
     <?php foreach ($posts as $post): ?>
+        <p><?php echo $post['first_name'].' '. $post['last_name'];?></p>
+        <img style="width: 150px; height: 150px;" class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
         <br>
-    <img style="width: 150px; height: 150px;" class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
-    <br>
-    <p><?php echo $post['content']?></p>
-    <?php endforeach; ?>
-    <br>
-</div>
+        <p><?php echo $post['content'];?></p>
+        <br>
+        <br>
+        <?php endforeach; ?>
+    </div>
 </article>
 
 

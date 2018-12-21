@@ -34,6 +34,7 @@
      </p>
 
     </form>
+
 </article>
 
 <?php if(isset($_SESSION['error'])){ unset($_SESSION['error']) ;}; ?>

@@ -30,6 +30,14 @@ if (isset($_POST['first_name'], $_POST['last_name'],$_POST['email'],$_POST['bio'
     // $statement->bindParam(':password', $password, PDO::PARAM_STR);
 
     $statement->execute();
+    $statement = $pdo->prepare('SELECT * FROM users WHERE email = :email');
+    // bind the parameter to the if(isset) so it's exists
+    $statement->bindParam(':email', $email);
+    // execute the code
+    $statement->execute();
+    // fecth the data from the database, fetch_assic get a clean output
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
+    $_SESSION['user'] = $user;
     redirect('/mypage.php');
 
 }
