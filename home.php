@@ -6,7 +6,8 @@
 
 <!-- if the user is logged in create a welcome message -->
     <?php if (isset($_SESSION['user'])): ?>
-       <p>Welcome, <?php echo $_SESSION['user']['first_name'],$_SESSION['user']['last_name']; ?>!</p>
+       <img class="profile-pic" src="image/profile/<?php echo $_SESSION['user']['profile_pic'];?>" alt="avatar">
+       <p> <?php echo $_SESSION['user']['first_name']. ' '.$_SESSION['user']['last_name']; ?></p>
    <?php endif; ?>
 <br><br><br>
 

@@ -9,6 +9,7 @@
     <!-- <?php if (isset($_SESSION['user'])): ?>
        <p><?php echo $_SESSION['user']['first_name']; ?></p>
    <?php endif; ?> -->
+  <?php $userId = $_SESSION['user']['user_id']; ?>
 <div class="top-mypage">
 
 <!-- upload avatar -->
@@ -28,17 +29,25 @@
         <p>Firstame: <?php echo $_SESSION['user']['first_name']; ?></p>
         <p>Laststame: <?php echo $_SESSION['user']['last_name']; ?></p>
         <p>Biography: <?php echo $_SESSION['user']['bio']; ?></</p>
-        <!-- <form class="add-bio" action="app/users/bio.php" method="post">
-                <div class="form-group">
-                    <p>
-                      <label>Write something about you</label><br>
-                      <input type="text" name="bio">
-                    </p>
-                </div>
-                <!-- form-group -->
-                <!-- <button type="submit" class="bio-button">Add</button>
-            </form> -->
-        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="gallery-mypage">
+    <?php
+            $statement = $pdo->prepare("SELECT * FROM posts WHERE user_id =  '$userId';");
+            $statement->execute();
+            $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+            // die(var_dump($posts));
+     ?>
+        <?php foreach ($posts as $post): ?>
+            <img style="width: 150px; height: 150px;" class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
+            <br>
+            <p><?php echo $post['content'];?></p>
+            <br>
+            <br>
+            <?php endforeach; ?>
+
 </div>
 </article>
 
