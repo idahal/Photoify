@@ -21,16 +21,14 @@
         <label>Change email</label><br>
         <input type="email" value="<?php echo $user['email'] ?>" name="email" required id=email>
       </p>
-      <!-- <p>
-        <label>New password</label><br>
-        <input type="password" name="password" id=password>
-      </p>
-      <p>
-        <label>Confirm new password</label><br>
-        <input type="password" name="confirm_password">
-      </p> -->
       <p>
         <button type="submit" class="sign-up">Update</button>
+     </p>
+    </form>
+    <form class="create-account" action="app/users/delete.php" method="post">
+        <h1>Delete my account</h1>
+      <p>
+        <button type="submit" class="sign-up">Delete</button>
      </p>
 
     </form>
