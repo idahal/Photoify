@@ -29,12 +29,14 @@
          <br>
 
 <?php
+// join users column with posts column. Print post, name and comment.
     $statement = $pdo->prepare('SELECT a.post, a.content, c.first_name, c.last_name FROM posts a
         LEFT JOIN users c ON a.user_id=c.user_id;');
         $statement->execute();
         $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
         // die(var_dump($posts));
  ?>
+ <!-- Print post, name and comment. -->
     <?php foreach ($posts as $post): ?>
         <p><?php echo $post['first_name'].' '. $post['last_name'];?></p>
         <img style="width: 150px; height: 150px;" class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
@@ -45,7 +47,3 @@
         <?php endforeach; ?>
     </div>
 </article>
-
-
-<!-- // for loop/foreach
-//fetchAll -->

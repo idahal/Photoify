@@ -12,6 +12,7 @@
   <?php $userId = $_SESSION['user']['user_id']; ?>
 <div class="top-mypage">
 
+
 <!-- upload avatar -->
 <div class="avatar">
 
@@ -43,7 +44,19 @@
         <?php foreach ($posts as $post): ?>
             <img style="width: 150px; height: 150px;" class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
             <br>
-            <p><?php echo $post['content'];?></p>
+            <form class="edit-post" action="app/posts/update.php" method="post">
+              <p>
+                <label>Edit post</label><br>
+                <input type="text" value="<?php echo $post['content'];?>" name="content" id=content>
+                <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=user_id>
+              </p>
+              <p>
+                <button type="submit" class="save">Save</button>
+             </p>
+            </form>
+
+            <a href="#">Delete Image</a>
+
             <br>
             <br>
             <?php endforeach; ?>
