@@ -8,8 +8,8 @@ require __DIR__.'/../autoload.php';
 // Update posts in the database.
     if (isset($_SESSION['user'], $_POST['post_id'], $_POST['content'])) {
         $content = filter_var($_POST['content'],FILTER_SANITIZE_STRING);
-        $userId = (int) $_SESSION['user']['user_id'];
-        $postId = (int) $_POST['post_id'];
+        $userId = $_SESSION['user']['user_id'];
+        $postId = $_POST['post_id'];
 
         // die(var_dump($userId, $postId));
         $statement = $pdo->prepare('UPDATE posts SET content = :content WHERE user_id = :user_id AND post_id = :post_id');

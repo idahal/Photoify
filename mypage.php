@@ -53,16 +53,16 @@
               <p>
                 <button type="submit" class="save">Save</button>
              </p>
-            </form>
-
-            <a href="#">Delete Image</a>
-
+        </form>
+        <form class="delete-post" action="app/posts/delete.php" method="post">
+            <p>
+              <button type="submit" class="delete">Delete Image</button>
+           </p>
+           <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=post_id>
+        </form>
             <br>
             <br>
             <?php endforeach; ?>
-
 </div>
 </article>
-
-
 <?php require __DIR__.'/views/footer.php'; ?>
