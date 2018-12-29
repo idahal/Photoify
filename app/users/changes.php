@@ -27,9 +27,10 @@ if (isset($_POST['first_name'], $_POST['last_name'],$_POST['email'],$_POST['bio'
     $statement->bindParam(':last_name', $lastName, PDO::PARAM_STR);
     $statement->bindParam(':email', $email, PDO::PARAM_STR);
     $statement->bindParam(':bio', $bio, PDO::PARAM_STR);
-    // $statement->bindParam(':password', $password, PDO::PARAM_STR);
 
     $statement->execute();
+
+    // select data agian to update the changes
     $statement = $pdo->prepare('SELECT * FROM users WHERE email = :email');
     // bind the parameter to the if(isset) so it's exists
     $statement->bindParam(':email', $email);

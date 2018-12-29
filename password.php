@@ -1,14 +1,17 @@
 <?php require __DIR__.'/views/header.php'; ?>
 
-<?php if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}?>
+<?php if(!isset($_SESSION['user'])){ redirect("/"); } else {$user = $_SESSION['user'];}?>
 
 <article>
     <form class="create-account" action="app/users/password.php" method="post">
         <h1>Change password</h1>
-
-<p>
+        <!-- <p>
+    <label>Your password</label><br>
+    <input type="password" name="password" id=password>
+    </p> -->
+        <p>
   <label>New password</label><br>
-  <input type="password" name="password" id=password>
+  <input type="password" name="new_password" id=new_password>
 </p>
 <p>
   <label>Confirm new password</label><br>

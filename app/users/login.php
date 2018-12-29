@@ -25,6 +25,7 @@ if($email === '' || $password === ''){
     $errors[]= 'You must enter the fields';
 };
 if (password_verify($_POST['password'], $user['password'])){
+     unset($user['password']);
     $_SESSION['user'] = $user;
     redirect('/');
 } else {

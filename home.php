@@ -30,7 +30,7 @@
 
 <?php
 // join users column with posts column. Print post, name and comment.
-    $statement = $pdo->prepare('SELECT a.post, a.content, c.first_name, c.last_name FROM posts a
+    $statement = $pdo->prepare('SELECT a.post, a.content, a.post_id, c.first_name, c.last_name FROM posts a
         LEFT JOIN users c ON a.user_id=c.user_id;');
         $statement->execute();
         $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -41,6 +41,15 @@
         <p><?php echo $post['first_name'].' '. $post['last_name'];?></p>
         <img style="width: 150px; height: 150px;" class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
         <br>
+
+        <form class="like-post" action="app/likes/like.php" method="post">
+            <p>
+              <button type="submit" name="like" class="like">LIKE</button>
+              <p>Liked by: 0</p>
+           </p>
+           <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=post_id>
+        </form>
+        <!-- <a href="app/likes/like.php?type=like&post_id=<?php echo $post['post_id'];?>">0</a> -->
         <p><?php echo $post['content'];?></p>
         <br>
         <br>

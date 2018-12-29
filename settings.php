@@ -25,13 +25,13 @@
         <button type="submit" class="sign-up">Update</button>
      </p>
     </form>
-    <form class="create-account" action="app/users/delete.php" method="post">
+    <!-- <form class="create-account" action="app/users/delete.php" method="post">
         <h1>Delete my account</h1>
       <p>
         <button type="submit" class="sign-up">Delete</button>
      </p>
 
-    </form>
+    </form> -->
 
 </article>
 

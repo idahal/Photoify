@@ -22,16 +22,21 @@
                     <a class="nav-link" href="/about.php">About</a>
                 <?php endif; ?>
             </li>
-            <li>
+            <!-- <li>
                 <?php if (isset($_SESSION['user'])): ?>
                     <a class="nav-link" href="/settings.php">My settings</a>
                 <?php endif; ?>
-            </li>
+            </li> -->
             <li>
+                <?php if (isset($_SESSION['user'])): ?>
+                    <a class="nav-link" href="/myaccount.php">My account</a>
+                <?php endif; ?>
+            </li>
+            <!-- <li>
                 <?php if (isset($_SESSION['user'])): ?>
                     <a class="nav-link" href="/password.php">Change password</a>
                 <?php endif; ?>
-            </li>
+            </li> -->
             <li>
                 <?php if (isset($_SESSION['user'])): ?>
                     <a class="nav-link" href="app/users/logout.php">Logout</a>
