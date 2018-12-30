@@ -4,15 +4,16 @@
 
 
 <article class="account-settings">
+    <h1>Edit profile</h1>
 <ul>
     <li>
-        <a class="nav-link" href="/settings.php">My settings</a>
+        <p><a class="nav-link" href="/settings.php">My settings</a></p>
     </li>
     <li>
-        <a class="nav-link" href="/password.php">Change password</a>
+        <p><a class="nav-link" href="/password.php">Change password</a></p>
     </li>
     <li>
-        <a class="nav-link" href="/delete.php">Delete my account</a>
+        <p><a class="nav-link" href="/delete.php">Delete my account</a></p>
     </li>
 </ul>
 

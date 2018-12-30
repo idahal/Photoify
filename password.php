@@ -20,6 +20,9 @@
 <p>
   <button type="submit" class="sign-up">Update</button>
 </p>
+<p>
+ <a href="/myaccount.php">Back</a>
+</p>
 </form>
 </article>
 

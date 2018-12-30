@@ -6,7 +6,12 @@
           <rect y="20.3999" width="36" height="3.0" rx="1.8" fill="#ffffff"/>
         </svg>
       </span>
-      <a href="#" class="logo">Photoify</a>
+      <?php if (isset($_SESSION['user'])): ?>
+          <a  class="logo" href="#"><?php echo $_SESSION['user']['first_name']. ' '. $_SESSION['user']['last_name']; ?></a>
+      <?php else: ?>
+          <<a href="#" class="logo">Photoify</a>
+      <?php endif; ?>
+      <!-- <a href="#" class="logo">Photoify</a> -->
         <ul class="main-nav" id="js-menu">
             <li>
                 <?php if (isset($_SESSION['user'])): ?>

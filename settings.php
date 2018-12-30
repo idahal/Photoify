@@ -24,6 +24,9 @@
       <p>
         <button type="submit" class="sign-up">Update</button>
      </p>
+     <p>
+      <a href="/myaccount.php">Back</a>
+     </p>
     </form>
     <!-- <form class="create-account" action="app/users/delete.php" method="post">
         <h1>Delete my account</h1>

@@ -6,7 +6,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background-color: darkgrey;
+  background-color: floralwhite;
   display:flex;
   flex-direction: column;
   /* background-image: url("/image/bg_photoify2.jpg");
@@ -47,7 +47,7 @@ body {
   margin-left: 20px;
           }
 
-          .navbar-toggle {
+  .navbar-toggle {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -56,11 +56,11 @@ body {
   font-size: 24px;
           }
 
-          .active {
+  .active {
   display: block;
           }
 /*style container mobile*/
-          .container {
+.container {
 margin: auto;
 width: 100%;
 height: 400px;
@@ -86,7 +86,7 @@ height: 400px;
 }
 
 .form-control input {
-  background-color: whitesmoke;
+  background-color: floralwhite;
   margin-top: 2%;
   margin-bottom: 7%;
 }
@@ -139,36 +139,116 @@ height: 400px;
 
 /*style userpage mobile*/
   .homepage {
-  color: white;
+  color: black;
 
  }
  .homepage h1 {
    text-align: center;
     }
 
- /* style my page mobile*/
+.gallery-page {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  }
+
+ /* style my page mobile + some styling lika sturctur and button userpage*/
 
  .my-page {
-   color: white;
- }
+   color: black;
 
- .top-mypage {
+   }
+
+ .top-mypage, .top-gallery-page {
    display: flex;
    flex-direction: row;
- }
+  justify-content: space-between;
+  margin: 0px;
+   }
 
  .profile-pic {
-   height: 5em;
-   width: 5em;
+   height: 6em;
+   width: 6em;
    border-radius: 50%;
  }
+
+ .my-page input {
+   width: 100px;
+ }
+
+ .profile-pic-small {
+   height: 3em;
+   width: 3em;
+   border-radius: 50%;
+ }
+
+ .gallery-mypage{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ }
+
+.image-names {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5em;
+  }
+
+.image-names p {
+  align-self: center;
+  margin-left: 0.5em;
+  }
+
+  .like-post {
+    display: flex;
+    flex-direction: row;
+  }
 
  .bio {
    text-transform: capitalize;
  }
 
+ .delete-post-button, .save-button, .upload-profile-pic {
+   margin: 2%;
+   width: 100px;
+   height: 44px;
+   border-radius: 4px;
+   border: none;
+   color: white;
+   background-color:  #272727;
+ }
 
-          @media screen and (min-width: 700px) {
+/*style accountsettings*/
+
+.account-settings {
+width: 70%;
+height: 70%;
+margin: auto;
+background-color: white;
+}
+
+.account-settings a {
+  color: black;
+}
+
+.account-settings li {
+  list-style: none;
+  text-align: left;
+  margin: 25px auto;
+  }
+
+.account-settings h1 {
+  padding-top: 2em;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+
+
+
+@media screen and (min-width: 700px) {
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -222,5 +302,12 @@ height: 400px;
   .sign-in {
     width: 30%;
     }
+
+  /*style my page desktop*/
+  .gallery-mypage {
+   display: flex;
+   flex-direction: row;
+  justify-content: space-around;
+  }
 
 }

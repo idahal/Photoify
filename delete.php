@@ -8,7 +8,9 @@
   <p>
     <button type="submit" class="sign-up">Delete</button>
  </p>
-
+<p>
+ <a href="/myaccount.php">Back</a>
+</p>
 </form>
 
 </article>
