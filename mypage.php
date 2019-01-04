@@ -1,5 +1,8 @@
 <?php require __DIR__.'/views/header.php'; ?>
 
+<!-- if user login show mypage -->
+<?php if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}?>
+
 <!-- my page where the user can update settings -->
 <article class="my-page">
 <!-- if the user is logged in create a welcome message -->
@@ -13,14 +16,16 @@
 <!-- upload avatar -->
 <div class="avatar">
 
-<img class="profile-pic" src="image/profile/<?php echo $_SESSION['user']['profile_pic'];?>" alt="avatar">
-   <form action="app/users/upload.php" method="post" enctype="multipart/form-data">
+<img class="profile-pic-mypage" src="image/profile/<?php echo $_SESSION['user']['profile_pic'];?>" alt="avatar">
+   <!-- <form action="app/users/upload.php" method="post" enctype="multipart/form-data">
             <div>
-                <p><label for="images">Add profile photo:</label></p>
+                <p><label for="images">Change profile photo:</label></p>
                 <input type="file"  value="upload file" name="profile_pic" id="images" accept=".png, .jpeg, .jpg" multiple required>
             </div><br>
-            <button type="submit">Upload</button>
-        </form>
+            <button class="upload-profile-pic" type="submit">Upload</button>
+        </form> -->
+        <a href="/avatar.php"><button class="add-button">+</button></a>
+
     </div><!-- upload avatar end -->
 
     <div class="bio">
@@ -41,7 +46,7 @@
         <?php foreach ($posts as $post): ?>
             <div class="posts">
 
-            <img style="width: 100px; height: 100px;" class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
+            <img class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
             <br>
             <form class="edit-post" action="app/posts/update.php" method="post">
               <p>
