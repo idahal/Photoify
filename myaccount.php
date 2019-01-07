@@ -13,8 +13,14 @@
         <p><a class="nav-link" href="/password.php">Change password</a></p>
     </li>
     <li>
+        <p><a class="nav-link" href="/avatar.php">Change profile photo</a></p>
+    </li>
+    <li>
         <p><a class="nav-link" href="/delete.php">Delete my account</a></p>
     </li>
+    <p>
+     <a href="/">Back</a>
+    </p>
 </ul>
 
 

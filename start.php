@@ -1,6 +1,5 @@
 
 <article>
-
     <form class="sign-in" action="app/users/login.php" method="post">
         <h1>Sign in</h1>
         <div class="form-group">

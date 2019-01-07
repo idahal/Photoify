@@ -27,11 +27,10 @@
         <a href="/avatar.php"><button class="add-button">+</button></a>
 
     </div><!-- upload avatar end -->
-
     <div class="bio">
-        <p>Firstame: <?php echo $_SESSION['user']['first_name']; ?></p>
-        <p>Laststame: <?php echo $_SESSION['user']['last_name']; ?></p>
+        <h3><?php echo $_SESSION['user']['first_name'].' '.$_SESSION['user']['last_name']; ?></h3>
         <p>Biography: <?php echo $_SESSION['user']['bio']; ?></</p>
+        <br><a href="#">Edit profile</a>
     </div>
 </div>
 <br>
