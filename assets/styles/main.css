@@ -182,11 +182,24 @@ height: 100vh;
    color: black;
    }
 
- .top-mypage, .top-gallery-page {
+   .top-mypage {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+
+   }
+
+   .bio {
+     text-transform: capitalize;
+     text-align: center;
+   }
+
+ .top-gallery-page {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
    }
+
 
  .profile-pic-mypage, .profile-pic-home {
    height: 6em;
@@ -259,9 +272,11 @@ height: 100vh;
     flex-direction: row;
   }
 
- .bio {
-   text-transform: capitalize;
- }
+  .like {
+    background-color: white;
+    border: none;
+  }
+
 
  .delete-post-button, .save-button, .upload-profile-pic, .upload-photo {
    margin: 2%;
