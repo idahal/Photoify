@@ -3,7 +3,8 @@
 declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
-// In this file we delete new posts in the database.
+
+//  delete posts in the database.
 if (isset($_POST['post_id'])) {
     $postId = $_POST['post_id'];
 

@@ -8,7 +8,7 @@ if (isset($_POST['post_id'])) {
     $id = $_SESSION['user']['user_id'];
     $postId = $_POST['post_id'];
 
-// Check if like exist in database
+// Dislike a post
  $statement = $pdo->prepare('DELETE FROM likes WHERE post_id = :post_id AND user_id = :user_id');
 
  if (!$statement){

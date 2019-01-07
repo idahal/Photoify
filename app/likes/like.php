@@ -26,11 +26,11 @@ if (!$alreadyLiked) {
             die(var_dump($pdo->errorInfo()));
         }
 
-        // binds variables to parameteres for insert statement
-            $statement->bindParam(':post_id', $postId, PDO::PARAM_INT);
-            $statement->bindParam(':user_id', $id, PDO::PARAM_INT);
-            $statement->execute();
-
-        }
+// binds variables to parameteres for insert statement
+    $statement->bindParam(':post_id', $postId, PDO::PARAM_INT);
+    $statement->bindParam(':user_id', $id, PDO::PARAM_INT);
+    $statement->execute();
+    }
 }
+
 redirect('/');

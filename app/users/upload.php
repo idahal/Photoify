@@ -41,7 +41,7 @@ if(count($errors) === 0) {
     {
         die(var_dump($pdo->errorInfo()));
     }
-    redirect('/mypage.php');
+    redirect('/avatar.php');
 }
 
 }

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
 
-
-
 $errors = [];
 
 // In this file we store/insert new posts in the database.
@@ -38,12 +36,12 @@ if (isset($_POST['content'],$_FILES['post'])) {
        'INSERT INTO posts (post, date, content, user_id)
         VALUES (:post, :date, :content, :user_id);');
 
-     $statement->bindParam(':post', $fileName, PDO::PARAM_STR);
-     $statement->bindParam(':date', $date, PDO::PARAM_STR);
-     $statement->bindParam(':content', $content, PDO::PARAM_STR);
-     $statement->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $statement->bindParam(':post', $fileName, PDO::PARAM_STR);
+        $statement->bindParam(':date', $date, PDO::PARAM_STR);
+        $statement->bindParam(':content', $content, PDO::PARAM_STR);
+        $statement->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $statement->execute();
 
-     $statement->execute();
-     redirect('/');
-}
+        redirect('/');
+    }
 }
