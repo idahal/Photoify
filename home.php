@@ -47,7 +47,7 @@
                 </a>
                 <!-- stop trying -->
             </div>
-        <img style="width: 300px; height: 300px;" class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
+        <img class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
         <p><b><?php echo $post['first_name'].' '. $post['last_name']?></b><?php echo ': '. $post['content'];?></p>
 <?php
 // select likes from database
@@ -62,16 +62,20 @@
             <!-- change button if the post is liked by the user or not -->
             <p><?php if($alreadyLiked):?>
         <form class="like-post" action="app/likes/delete.php" method="post">
-                <button type="submit" name="like" class="like">LIKED</button>
-                <br>
-                 <p>Liked by: <?php echo $post['like']; ?></p>
+                <button type="submit" name="like" class="like">
+                    <span style="color:red;">
+                        <i class="fas fa-heart fa-lg"></i>
+                    </span>
+                </button>
+                <p>Liked by: <?php echo $post['like']; ?></p>
                 </p>
                  <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=post_id>
              </form>
            <?php else: ?>
                <form class="like-post" action="app/likes/like.php" method="post">
-               <button type="submit" name="like" class="like">LIKE</button>
-           <br>
+               <button type="submit" name="like" class="like">
+                   <i class="far fa-heart fa-lg"></i>
+               </button>
             <p>Liked by: <?php echo $post['like']; ?></p>
            </p>
             <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=post_id>

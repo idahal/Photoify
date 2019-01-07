@@ -138,7 +138,7 @@ height: 100vh;
   background-color:  #272727;
   }
 
-/*style userpage mobile*/
+/*style gallery mobile*/
   .homepage {
 
   color: black;
@@ -152,6 +152,11 @@ height: 100vh;
    display: flex;
    flex-direction: column;
    align-items: center;
+     }
+
+  .gallery-pics {
+    width: 300px;
+    height: 300px;
   }
 
   /*upload button*/
@@ -257,7 +262,7 @@ height: 100vh;
   margin-bottom: 0.5em;
   }
 
-.gallery-pics {
+.my-gallery-pics {
   width: 100px;
   height: 100px;
 }
@@ -315,10 +320,23 @@ background-color: white;
   text-transform: uppercase;
 }
 
+/*STYLE TO IPAD*/
+@media screen and (min-width: 600px) {
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
 
+/*style gallery page ipad*/
+.gallery-pics {
+  width: 400px;
+  height: 400px;
+}
 
+}
 
-@media screen and (min-width: 700px) {
+/*STYLE TO DESKTOP*/
+@media screen and (min-width: 800px) {
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -335,7 +353,7 @@ background-color: white;
 
   .main-nav {
       display: flex;
-      width: 100%;
+      width: 70%;
       margin-right: 30px;
       flex-direction: row;
       justify-content: flex-end;
@@ -378,6 +396,12 @@ background-color: white;
    display: flex;
    flex-direction: row;
   justify-content: space-around;
+  }
+
+  /*style gallery page desktop*/
+  .gallery-pics {
+    width: 500px;
+    height: 500px;
   }
 
 }

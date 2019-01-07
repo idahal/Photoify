@@ -45,7 +45,7 @@
         <?php foreach ($posts as $post): ?>
             <div class="posts">
 
-            <img class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
+            <img class="my-gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
             <br>
             <form class="edit-post" action="app/posts/update.php" method="post">
               <p>
