@@ -159,27 +159,67 @@ height: 100vh;
     height: 300px;
   }
 
+  .top-gallery-page {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+    }
+
   /*upload button*/
   .upload-btn-wrapper {
-  display: flex;
-  flex-direction: column;
-}
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
 
-.btn {
-  /* width: 150px;
-  height: 44px;
-  border: 1px solid gray;
-  color: gray;
+.upload-button {
+  border: none;
+  color: black;
   background-color: white;
   padding: 8px 20px;
+ border-radius: 4px;
+ width: 100px;
+ height: 104px;
+ font-size: 16px;
+ border: 1.5px dashed black;
+ }
+
+.upload-button-wrapper input[type=file] {
+  opacity: 0;
+  position: absolute;
+  width: 200px;
+  height: 44px;
+  transform: translate(-70%, -30%);
+ -ms-transform: translate(-50%, -50%);
+}
+
+.upload-button-wrapper input[type="text"] {
+  opacity: 0;
+  position: absolute;
+  width: 200px;
+  height: 44px;
+  transform: translate(-70%, -30%);
+ -ms-transform: translate(-50%, -50%);
+  border: 0.5px solid black;
+  margin-top: 2%;
   border-radius: 4px;
-  font-size: 14px; */
-
+  width: 200px;
+  height: 30px;
 }
 
-.upload-btn-wrapper input[type=file] {
-
+.upload-photo {
+  margin: 2%;
+  width: 100px;
+  height: 44px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: #272727;
+  float: right;
 }
+
 
  /* style my page mobile + some styling like structur and button userpage*/
 
@@ -197,12 +237,6 @@ height: 100vh;
    .bio {
      text-transform: capitalize;
      text-align: center;
-   }
-
- .top-gallery-page {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
    }
 
 
@@ -283,7 +317,7 @@ height: 100vh;
   }
 
 
- .delete-post-button, .save-button, .upload-profile-pic, .upload-photo {
+ .delete-post-button, .save-button, .upload-profile-pic {
    margin: 2%;
    width: 100px;
    height: 44px;
@@ -292,6 +326,50 @@ height: 100vh;
    color: white;
    background-color:  #272727;
  }
+
+ /*style change avatar page mobile*/
+.avatar-page {
+  background-color: white;
+}
+
+
+.upload-avatar-wrapper {
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+
+  }
+
+
+ .upload-avatar-wrapper input[type=file] {
+   opacity: 0;
+   position: absolute;
+   width: 100px;
+   height: 100px;
+   transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+ }
+
+ .upload-avatar-button {
+   border: none;
+   color: black;
+   background-color: white;
+   padding: 8px 20px;
+  border-radius: 4px;
+  width: 100px;
+  height: 100px;
+  font-size: 16px;
+  border: 1.5px dashed black;
+  }
+
 
 /*style accountsettings*/
 

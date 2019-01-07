@@ -8,18 +8,22 @@
         <?php endif; ?>
 
         <!-- upload photo -->
-        <div class="upload-btn-wrapper">
+        <div class="upload-button-wrapper">
             <form action="app/posts/store.php" method="post" enctype="multipart/form-data">
-                 <p><label for="images">Upload image</label></p>
-                 <input class="btn" type="file"  value="upload file" name="post" id="images" accept=".png, .jpeg, .jpg" multiple required>
+                 <!-- <p><label class="share-button" for="images">Share your photos</label></p> -->
+                 <button class="upload-button" type="button" name="button"><i class="far fa-image fa-lg"></i> Photo
+                     <input type="file"  value="upload file" name="post" id="images" accept=".png, .jpeg, .jpg" multiple required>
+                 </button>
+                 <!-- <input type="file"  value="upload file" name="post" id="images" accept=".png, .jpeg, .jpg" multiple required> -->
                     <div class="form-group">
                         <p>
-                            <input type="text" name="content" placeholder="Add text to your photo">
+                            <input type="text" name="content" placeholder=" Add text">
                         </p>
                     </div>
-                    <button class="upload-photo" type="submit">Upload</button>
+                    <button class="upload-photo" type="submit">Share</button>
              </form>
-         </div><br>
+         </div>
+         <br>
      </div>
 <?php
     // join users column with posts column. Print post, name and comment.
