@@ -8,4 +8,7 @@ navBarToggle.addEventListener('click', function () {
   mainNav.classList.toggle('active');
 });
 
-//check password when user change settings
+//display wich file user pick
+document.getElementById("file-upload").onchange = function() {
+  document.getElementById("uploadFile").value = this.value;
+};

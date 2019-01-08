@@ -2,7 +2,7 @@
 
 <?php if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}?>
 
-<article class="avatar-page">
+<article class="create-account">
 
 <!-- show users avatar -->
     <img class="profile-pic-mypage" src="image/profile/<?php echo $_SESSION['user']['profile_pic'];?>" alt="avatar">
