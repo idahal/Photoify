@@ -6,7 +6,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background-color: #f6f6ee;
+  background-color: #ffff;
   display:flex;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
@@ -16,7 +16,11 @@ body a {
   color:#800040;
 }
 
-/*style navbar mobile dropdown*/
+/*style login page mobile-------------------------------------------------------------------------*/
+
+
+
+/*style navbar mobile dropdown----------------------------------------------------------------*/
 .navbar {
   font-size: 16px;
   position: relative;
@@ -56,88 +60,23 @@ body a {
   cursor: pointer;
   color: white;
   font-size: 24px;
-          }
+  }
 
   .active {
   display: block;
-          }
-/*style container mobile*/
+}/*style navbar mobile------------------------------------------------------------------------------*/
+
+
+
+/*style container mobile------------------------------------------------------------------------------*/
 .container {
-margin-top: 10%;
-width: 100%;
-height: 100vh;
+ margin: 0px;
+ width: 100%;
+ height: 100vh;
+}/*style container mobile end------------------------------------------------------------------------------*/
 
-}
-/*style start page mobile*/
-.sign-in {
-  width: 70%;
-  margin: auto;
-  padding-top: 10%;
-  padding-bottom: 10%;
-  background-color: white;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 4px;
 
-  }
-.sign-in h1 {
-  text-transform: uppercase;
-  padding-bottom: 10%;
-}
 
-.form-control input {
-  background-color: floralwhite;
-  margin-top: 2%;
-  margin-bottom: 7%;
-}
-
-.login-button {
-  margin: 5%;
-  width: 200px;
-  height: 44px;
-  border-radius: 4px;
-  border: none;
-  color: white;
-  background-color:  #272727;
-}
-
-/*style create account mobile */
-  .create-account {
-  width: 70%;
-  margin: auto;
-  padding-top: 10%;
-  padding-bottom: 10%;
-  background-color: white;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 4px;
-}
-
-.create-account h1 {
-  text-transform: uppercase;
-  padding-bottom: 10%;
-  font-size: 20px;
-}
-
-.form-signup input {
-  background-color: whitesmoke;
-  margin-top: 2%;
-  margin-bottom: 7%;
-}
-
-.sign-up {
-  margin: 5%;
-  width: 200px;
-  height: 44px;
-  border-radius: 4px;
-  border: none;
-  color: white;
-  background-color:  #272727;
-  }
 
 /*style gallery mobile*/
   .homepage {
@@ -161,9 +100,22 @@ height: 100vh;
     height: 350px;
     }
 
+/*style upload_photo*/
+
+
+    .share-photos-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
       .share-photos {
         display: flex;
         flex-direction: column;
+      }
+
+      .share-photos-page h1 {
+        text-transform: uppercase;
       }
 
       .custom-file-upload {
@@ -201,8 +153,8 @@ height: 100vh;
       height: 44px;
       border-radius: 2em;
       border:  0.1em solid #272727;
-      color:#272727;
-      background-color: #FFFFFF;
+      color: #FFFFFF;
+      background-color: #272727;
       font-size: 1em;
       text-transform: uppercase;
       align-self: center;
@@ -238,20 +190,19 @@ height: 100vh;
    }
 
 
- .profile-pic-mypage, .profile-pic-home {
+ .profile-pic-mypage {
    height: 6em;
    width: 6em;
    border-radius: 50%;
    margin-right: 2%;
    margin-left: 2%;
+   border: 3px #272727 solid;
    }
 
 .avatar {
   position: relative;
   width: 120px;
 }
-
-
 
 .add-button {
    height: 2em;
@@ -285,6 +236,7 @@ height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
  }
 
@@ -396,6 +348,50 @@ background-color: white;
   text-transform: uppercase;
 }
 
+
+.intro-page {
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  background-color: #ffff;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+
+.profile-pic-intro {
+  height: 8em;
+  width: 8em;
+  border-radius: 50%;
+  margin-right: 2%;
+  margin-left: 2%;
+  border: 3px #272727 solid;
+}
+ .intro-page p {
+   margin-top: 5%;
+ }
+
+/*style footer*/
+.footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 9%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #272727;
+  color: #ffff;
+  font-weight: 100;
+  padding: 0 5% 0 5%;
+  }
+
+  .footer li {
+    list-style-type: none;
+  }
+
+
+
 /*STYLE TO IPAD*/
 @media screen and (min-width: 600px) {
 * {
@@ -409,14 +405,28 @@ background-color: white;
   height: 400px;
 }
 
+
+/*style intro page ipad*/
+
+.intro-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+  height: 30vh;
+  background-color: #ffff;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+
 }
 
 /*STYLE TO DESKTOP*/
 @media screen and (min-width: 800px) {
-* {
+/* * {
   box-sizing: border-box;
   margin: 0px;
-}
+} */
 
 /*style navbar desktop*/
   .navbar {
@@ -455,19 +465,18 @@ background-color: white;
   .nav-link:hover {
       color: rgba(255, 255, 255, 1);
   }
+
+
 /*style container desktop*/
   .container {
-    margin: auto;
+    margin: 0;
     width: 100%;
-    height: 420px;
+    height: 560px;
   }
 
-  /*style index page mobile*/
-  .sign-in {
-    width: 30%;
-    }
 
-  /*style my page desktop*/
+
+    /*style my page desktop*/
   .gallery-mypage {
    display: flex;
    flex-direction: row;
@@ -479,5 +488,10 @@ background-color: white;
     width: 500px;
     height: 500px;
   }
+
+  /*style footer */
+  .footer {
+  display: none;
+}
 
 }
