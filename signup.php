@@ -1,14 +1,9 @@
 <?php require __DIR__.'/views/header.php'; ?>
 
 <article>
-    <!-- <h1><?php echo $config['title']; ?></h1>
-    <p>This is the home page.</p> -->
+    <!-- <h1><?php echo $config['title']; ?></h1> -->
     <form class="create-account" action="/app/users/signup.php" method="post">
         <h1>Create a account</h1>
-        <!-- <p>
-          <label>User name</label><br>
-          <input type="text" name="username">
-        </p> -->
       <p>
         <label>First name</label><br>
         <input class="form-signup" type="text" name="first_name">
