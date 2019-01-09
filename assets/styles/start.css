@@ -1,0 +1,61 @@
+/*style start page mobile-----------------------------------------------------------------------------*/
+.sign-in {
+  width: 100%;
+  height: 70vh;
+  margin: auto;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+
+  }
+.sign-in h1 {
+  font-size: 2em;
+  text-transform: uppercase;
+  padding-bottom: 10%;
+}
+
+.sign-in .form-group input[type="email"], .sign-in .form-group input[type="password"] {
+  border: 0.1em solid #272727;
+  margin-top: 1%;
+  margin-bottom: 4%;
+  width: 270px;
+  height: 44px;
+}
+
+.login-button {
+  margin: 5%;
+  padding:0.35em 1.2em;
+  width: 200px;
+  height: 44px;
+  border-radius: 2em;
+  border:  0.1em solid #272727;
+  color: #FFFFFF;
+  background-color: #272727;
+  font-size: 1em;
+  align-self: center;
+}
+/*style start page end------------------------------------------*/
+
+
+/*STYLE TO DESKTOP*/
+@media screen and (min-width: 800px) {
+  /*style start page mobile-----------------------------------------------------------------------------*/
+  .sign-in {
+    width: 100%;
+    height: 110vh;
+    }
+
+  .sign-in h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    padding-bottom: 10%;
+  }
+
+
+  /*style start page end------------------------------------------*/
+}
