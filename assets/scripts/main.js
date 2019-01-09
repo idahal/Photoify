@@ -8,7 +8,14 @@ navBarToggle.addEventListener('click', function () {
   mainNav.classList.toggle('active');
 });
 
+//
+// let fileUpload = document.getElementById("file-upload");
+// let uploadFile = document.getElementById("uploadFile");
+
 //display wich file user pick
-document.getElementById("file-upload").onchange = function() {
-  document.getElementById("uploadFile").value = this.value;
-};
+const fileUpload = document.getElementById("file-upload")
+  if(fileUpload){
+  fileUpload.addEventListener('change', function() {
+    document.getElementById("uploadFile").value = this.value;
+  });
+}
