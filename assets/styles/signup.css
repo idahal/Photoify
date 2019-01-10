@@ -23,7 +23,7 @@
 .create-account input[type="text"],
 .create-account input[type="password"],
 .create-account input[type="email"] {
-  border: 0.1em solid #272727;
+  border: 0.1em solid #000000;
   margin-top: 1%;
   margin-bottom: 4%;
   width: 270px;

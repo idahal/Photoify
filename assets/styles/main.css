@@ -13,12 +13,8 @@ body {
 }
 
 body a {
-  color:#800040;
+  color: #001440;
 }
-
-/*style login page mobile-------------------------------------------------------------------------*/
-
-
 
 /*style navbar mobile dropdown----------------------------------------------------------------*/
 .navbar {
@@ -26,7 +22,7 @@ body a {
   position: relative;
   /* position: fixed; */
   width: inherit;
-  background-color: #272727;
+  background-color: #ffdd99;
   padding-bottom: 10px;
   }
 
@@ -37,7 +33,7 @@ body a {
 
 .nav-link, .logo {
   text-decoration: none;
-  color: white;
+  color: #000000;
 }
 
 .main-nav li {
@@ -58,7 +54,7 @@ body a {
   top: 10px;
   right: 20px;
   cursor: pointer;
-  color: white;
+  color: #000000;
   font-size: 24px;
   }
 
@@ -71,174 +67,10 @@ body a {
 /*style container mobile------------------------------------------------------------------------------*/
 .container {
  margin: 0px;
+ padding-bottom: 10%;
  width: 100%;
- height: 100vh;
+ /* height: 100vh; */
 }/*style container mobile end------------------------------------------------------------------------------*/
-
-
-
-
-/*style gallery mobile*/
-  .homepage {
-  color: black;
- }
-
- .homepage h1 {
-   font-size: 30px;
-   text-align: center;
-   margin-bottom: 0.5em;
-  }
-
-.gallery-page {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   }
-
-  .gallery-pics {
-    width: 350px;
-    height: 350px;
-    }
-
-/*style upload_photo*/
-
-
-    .share-photos-page {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-      .share-photos {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .share-photos-page h1 {
-        text-transform: uppercase;
-      }
-
-      .custom-file-upload {
-      padding:0.35em 1.2em;
-      /* width: 200px;
-      height: 44px; */
-      font-size: 0.8em;
-      border:  0.1em solid #272727;
-      border-radius: 2em;
-      color:#272727;
-      background-color: #FFFFFF;
-      text-transform: uppercase;
-    }
-
-    #uploadFile {
-      text-align: center;
-      height: 44px;
-      width: 100px;
-      background-color: white;
-      color: black;
-      border: none;
-    }
-
-    .share-photos input[type="text"] {
-      border: 0.1em solid #272727;
-    margin-top: 1%;
-    width: 270px;
-    height: 44px;
-    }
-
-    .upload-photo {
-      margin: 5%;
-      padding:0.35em 1.2em;
-      width: 200px;
-      height: 44px;
-      border-radius: 2em;
-      border:  0.1em solid #272727;
-      color: #FFFFFF;
-      background-color: #272727;
-      font-size: 1em;
-      text-transform: uppercase;
-      align-self: center;
-    }
-
-  .top-gallery-page {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-       }
-
-.image-names a {
-  display: flex;
-}
-
-
- /* style my page mobile + some styling like structur and button userpage*/
-
- .my-page {
-   color: black;
-   }
-
-   .top-mypage {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-
-   }
-
-   .bio {
-     text-transform: capitalize;
-     text-align: center;
-   }
-
-
- .profile-pic-mypage {
-   height: 6em;
-   width: 6em;
-   border-radius: 50%;
-   margin-right: 2%;
-   margin-left: 2%;
-   border: 3px #272727 solid;
-   }
-
-.avatar {
-  position: relative;
-  width: 120px;
-}
-
-.add-button {
-   height: 2em;
-   width: 2em;
-   border-radius: 50%;
-   position: absolute;
-   color: white;
-   background-color:  #272727;
-   bottom: 1%;
-   right: 1%;
-   transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-   font-size: 16px;
-   border: none;
-   cursor: pointer;
-   text-align: center;
-}
-
- .my-page input {
-   width: 100px;
- }
-
- .profile-pic-small {
-   height: 3em;
-   width: 3em;
-   border-radius: 50%;
-   margin-top: 0px;
- }
-
- .gallery-mypage {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
- }
 
 .image-names {
   display: flex;
@@ -246,10 +78,6 @@ body a {
   margin-bottom: 0.5em;
   }
 
-.my-gallery-pics {
-  width: 100px;
-  height: 100px;
-}
 
 .image-names p {
   align-self: center;
@@ -267,15 +95,18 @@ body a {
   }
 
 
- .delete-post-button, .save-button, .upload-profile-pic {
-   margin: 2%;
-   width: 100px;
-   height: 44px;
-   border-radius: 4px;
-   border: none;
-   color: white;
-   background-color:  #272727;
- }
+  .upload-profile-pic {
+    margin: 5%;
+    padding:0.35em 1.2em;
+    width: 200px;
+    height: 44px;
+    border-radius: 2em;
+    border:  0.1em solid #000000;
+    color: #FFFFFF;
+    background-color: #000000;
+    font-size: 1em;
+    align-self: center;
+  }
 
  /*style change avatar page mobile*/
 .avatar-page {
@@ -349,30 +180,9 @@ background-color: white;
 }
 
 
-.intro-page {
-  display: flex;
-  flex-direction: column;
-  height: 30vh;
-  background-color: #ffff;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2%;
-}
-
-.profile-pic-intro {
-  height: 8em;
-  width: 8em;
-  border-radius: 50%;
-  margin-right: 2%;
-  margin-left: 2%;
-  border: 3px #272727 solid;
-}
- .intro-page p {
-   margin-top: 5%;
- }
 
 /*style footer*/
-.footer {
+.footer-mobile {
   display: flex;
   position: fixed;
   bottom: 0;
@@ -380,15 +190,20 @@ background-color: white;
   height: 9%;
   justify-content: space-between;
   align-items: center;
-  background-color: #272727;
-  color: #ffff;
+  background-color: #ffdd99;
+  color: #000000;
   font-weight: 100;
   padding: 0 5% 0 5%;
   }
 
-  .footer li {
+  .footer-mobile li {
     list-style-type: none;
   }
+
+  /*style footer */
+  .footer-desktop {
+  display: none;
+}
 
 
 
@@ -399,34 +214,15 @@ background-color: white;
   margin: 0px;
 }
 
-/*style gallery page ipad*/
-.gallery-pics {
-  width: 400px;
-  height: 400px;
-}
-
-
-/*style intro page ipad*/
-
-.intro-page {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0px;
-  height: 30vh;
-  background-color: #ffff;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2%;
-}
 
 }
 
 /*STYLE TO DESKTOP*/
 @media screen and (min-width: 800px) {
-/* * {
-  box-sizing: border-box;
-  margin: 0px;
-} */
+  * {
+    box-sizing: border-box;
+    margin: 0px;
+  }
 
 /*style navbar desktop*/
   .navbar {
@@ -466,32 +262,27 @@ background-color: white;
       color: rgba(255, 255, 255, 1);
   }
 
-
-/*style container desktop*/
-  .container {
-    margin: 0;
-    width: 100%;
-    height: 560px;
-  }
-
-
-
-    /*style my page desktop*/
-  .gallery-mypage {
-   display: flex;
-   flex-direction: row;
-  justify-content: space-around;
-  }
-
-  /*style gallery page desktop*/
-  .gallery-pics {
-    width: 500px;
-    height: 500px;
-  }
-
   /*style footer */
-  .footer {
+  .footer-mobile {
   display: none;
 }
+
+.footer-desktop {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 9%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffdd99;
+  color: #000000;
+  font-weight: 100;
+  padding: 0 5% 0 5%;
+  }
+
+  .footer-desktop li {
+    list-style-type: none;
+  }
 
 }
