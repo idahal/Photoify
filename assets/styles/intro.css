@@ -1,0 +1,39 @@
+
+.intro-page {
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  margin-top: 2%;
+  background-color: #ffff;
+  align-items: center;
+  justify-content: center;
+  }
+
+.profile-pic-intro {
+  height: 8em;
+  width: 8em;
+  border-radius: 50%;
+  margin-right: 2%;
+  margin-left: 2%;
+  border: 2.5px #272727 solid;
+}
+ .intro-page h3 {
+   margin-top: 5%;
+  }
+
+
+/*STYLE TO IPAD*/
+@media screen and (min-width: 600px) {
+/*style intro page ipad*/
+
+.intro-page {
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  background-color: #ffff;
+  align-items: center;
+  justify-content: center;
+
+}
+
+}
