@@ -1,10 +1,11 @@
+
 <?php require __DIR__.'/views/header.php'; ?>
-
 <?php if(!isset($_SESSION['user'])){ redirect("/"); } else {$user = $_SESSION['user'];}?>
-<article class="create-account">
 
-<!-- upload photo -->
-<h1>Share your photos</h1>
+<article class="share-photos-page">
+    <?php require __DIR__.'/views/intro.php'; ?>
+    <!-- upload photo -->
+<h1>Upload photos</h1>
 <form class="share-photos" action="app/posts/store.php" method="post" enctype="multipart/form-data">
     <div class="upload-file-style">
      <label for="file-upload" class="custom-file-upload">
