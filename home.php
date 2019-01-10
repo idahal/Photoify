@@ -3,28 +3,14 @@
 
     <div class="top-gallery-page">
 <!-- if the user is logged in show profile pic -->
-        <?php if (isset($_SESSION['user'])): ?>
+        <!-- <?php if (isset($_SESSION['user'])): ?>
             <img class="profile-pic-home" src="image/profile/<?php echo $_SESSION['user']['profile_pic'];?>" alt="avatar">
-        <?php endif; ?>
+            <p><?php   echo $_SESSION['user']['first_name']. ' '. $_SESSION['user']['last_name'];?></p>
+        <?php endif; ?> -->
+<?php require __DIR__.'/views/intro.php'; ?>
+        <a href="upload_photo.php">Share your photos</a>
+    </div>
 
-        <!-- upload photo -->
-        <div class="upload-button-wrapper">
-            <form action="app/posts/store.php" method="post" enctype="multipart/form-data">
-                 <!-- <p><label class="share-button" for="images">Share your photos</label></p> -->
-                 <button class="upload-button" type="button" name="button"><i class="far fa-image fa-lg"></i> Photo
-                     <input type="file"  value="upload file" name="post" id="images" accept=".png, .jpeg, .jpg" multiple required>
-                 </button>
-                 <!-- <input type="file"  value="upload file" name="post" id="images" accept=".png, .jpeg, .jpg" multiple required> -->
-                    <div class="form-group">
-                        <p>
-                            <input type="text" name="content" placeholder=" Add text">
-                        </p>
-                    </div>
-                    <button class="upload-photo" type="submit">Share</button>
-             </form>
-         </div>
-         <br>
-     </div>
 <?php
     // join users column with posts column. Print post, name and comment.
     $statement = $pdo->prepare(
@@ -37,9 +23,10 @@
         $statement->execute();
         $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
  <!-- print post, name and comment. -->
- <h1>The gallery</h1>
  <div class="gallery-page">
+     <h1>The gallery</h1>
     <?php foreach ($posts as $post): ?>
         <div class="post">
             <div class="image-names">
@@ -85,12 +72,10 @@
             <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=post_id>
         </form>
     <?php endif; ?>
-        <!-- <a href="app/likes/like.php?type=like&post_id=<?php echo $post['post_id'];?>">0</a> -->
         <br>
         <br>
     </div>
     <!-- end post -->
         <?php endforeach; ?>
-    </div>
-    <!-- end gallery-page -->
+    </div><!-- end gallery-page -->
 </article>

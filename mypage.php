@@ -6,27 +6,15 @@
 <!-- my page where the user can update settings -->
 <article class="my-page">
 <!-- if the user is logged in create a welcome message -->
-    <!-- <?php if (isset($_SESSION['user'])): ?>
-       <p><?php echo $_SESSION['user']['first_name']. ' '. $_SESSION['user']['last_name']; ?></p>
-   <?php endif; ?> -->
   <?php $userId = $_SESSION['user']['user_id']; ?>
 <div class="top-mypage">
 
 
 <!-- upload avatar -->
 <div class="avatar">
-
-<img class="profile-pic-mypage" src="image/profile/<?php echo $_SESSION['user']['profile_pic'];?>" alt="avatar">
-   <!-- <form action="app/users/upload.php" method="post" enctype="multipart/form-data">
-            <div>
-                <p><label for="images">Change profile photo:</label></p>
-                <input type="file"  value="upload file" name="profile_pic" id="images" accept=".png, .jpeg, .jpg" multiple required>
-            </div><br>
-            <button class="upload-profile-pic" type="submit">Upload</button>
-        </form> -->
-        <a href="/avatar.php"><button class="add-button">+</button></a>
-
-    </div><!-- upload avatar end -->
+    <img class="profile-pic-mypage" src="image/profile/<?php echo $_SESSION['user']['profile_pic'];?>" alt="avatar">
+     <a href="/avatar.php"><button class="add-button">+</button></a>
+</div><!-- upload avatar end -->
     <div class="bio">
         <h3><?php echo $_SESSION['user']['first_name'].' '.$_SESSION['user']['last_name']; ?></h3>
         <p>Biography: <?php echo $_SESSION['user']['bio']; ?></</p>
@@ -47,20 +35,18 @@
 
             <img class="my-gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
             <br>
-            <form class="edit-post" action="app/posts/update.php" method="post">
-              <p>
-                <input type="text" value="<?php echo $post['content'];?>" name="content" id=content>
-                <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=user_id>
-              </p>
-              <p>
-                <button type="submit" class="save-button">Edit post</button>
-             </p>
-        </form>
-        <form class="delete-post" action="app/posts/delete.php" method="post">
-            <p>
-              <button class="delete-post-button" type="submit" class="delete">Delete Image</button>
-           </p>
-           <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=post_id>
+                <form class="edit-post" action="app/posts/update.php" method="post">
+                    <p>
+                        <input type="text" value="<?php echo $post['content'];?>" name="content" id=content>
+                    </p>
+            <div class="button-div">
+                        <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=user_id>
+                    <button type="submit" class="save-button">Update post</button>
+                    </form>
+                <form class="delete-post" action="app/posts/delete.php" method="post">
+                    <button class="delete-post-button" type="submit" class="delete">Delete post</button>
+                    <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=post_id>
+            </div>
         </form>
             <br>
             <br>
