@@ -1,7 +1,7 @@
 <?php require __DIR__.'/views/header.php'; ?>
 
 <?php if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}?>
-
+<!-- first page when the user want to change something -->
 <article>
     <form class="create-account" action="app/users/changes.php" method="post">
         <h1>Update my account</h1>
@@ -15,7 +15,7 @@
       </p>
       <p>
         <label>Change biography</label><br>
-        <input type="text" value="<?php echo $user['bio'] ?>" name="bio" id=bio>
+        <input type="text" value="<?php echo $user['bio'] ?>" name="bio" id=bio maxlength="50">
       </p>
       <p>
         <label>Change email</label><br>

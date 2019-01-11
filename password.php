@@ -5,17 +5,17 @@
 <article>
     <form class="create-account" action="app/users/password.php" method="post">
         <h1>Change password</h1>
-        <!-- <p>
+        <p>
     <label>Your password</label><br>
-    <input type="password" name="password" id=password>
-    </p> -->
+    <input type="password" name="password" required>
+    </p>
         <p>
   <label>New password</label><br>
-  <input type="password" name="new_password" id=new_password>
+  <input type="password" name="new_password" required>
 </p>
 <p>
   <label>Confirm new password</label><br>
-  <input type="password" name="confirm_password">
+  <input type="password" name="confirm_password" required>
 </p>
 <p>
   <button type="submit" class="sign-up">Update</button>
@@ -25,6 +25,7 @@
 </p>
 </form>
 </article>
+<!--
+<?php if(isset($_SESSION['error'])){ unset($_SESSION['error']) ;}; ?> -->
 
-<?php if(isset($_SESSION['error'])){ unset($_SESSION['error']) ;}; ?>
 <?php require __DIR__.'/views/footer.php'; ?>

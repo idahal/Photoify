@@ -5,14 +5,17 @@
 
 <form class="create-account" action="app/users/delete.php" method="post">
     <h1>Delete my account</h1>
-  <p>
-    <button type="submit" class="sign-up">Delete</button>
- </p>
-<p>
- <a href="/myaccount.php">Back</a>
-</p>
+    <div class="alert-box">
+        <h3>Are you sure?</h3>
+        <p>This will delete your account, settings and photos.</p>
+    </div>
+        <p>
+            <button type="submit" class="sign-up">Delete</button>
+        </p>
+        <p>
+            <a href="/myaccount.php">Back</a>
+        </p>
 </form>
-
 </article>
 
 <?php if(isset($_SESSION['error'])){ unset($_SESSION['error']) ;}; ?>
