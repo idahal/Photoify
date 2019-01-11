@@ -25,6 +25,7 @@
    display: flex;
    flex-direction: column;
    align-items: center;
+   padding-bottom: 20%;
    }
 
   .gallery-pics {
@@ -38,6 +39,27 @@
       border-radius: 50%;
       margin-top: 0px;
     }
+    .image-names {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 0.5em;
+      }
+
+
+    .image-names p {
+      align-self: center;
+      margin-left: 0.5em;
+      }
+
+      .like-post {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .like {
+        background-color: white;
+        border: none;
+      }
 
     /*STYLE TO IPAD*/
     @media screen and (min-width: 600px) {
@@ -52,8 +74,12 @@
     @media screen and (min-width: 800px) {
 
       /*style gallery page desktop*/
-      .gallery-pics {
-        width: 500px;
-        height: 500px;
-      }
+    .gallery-pics {
+      width: 500px;
+      height: 500px;
+    }
+
+    .gallery-page {
+     padding-bottom: 10%;
+    }
     }

@@ -1,40 +1,34 @@
 
  /* style my page mobile + some styling like structur and button userpage*/
+ .top-mypage {
+   margin-top: 2%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
 
- .my-page {
+ .my-page h1 {
+   font-size: 2em;
+   text-align: center;
+   text-transform: uppercase;
+   padding-bottom: 2%;
+  }
 
-   }
+.bio h3 {
+   margin-top: 5%;
+}
 
-   .top-mypage {
-     margin-top: 2%;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
+.bio {
+  text-align: center;
+ }
 
-   }
+ .avatar {
+   position: relative;
+   width: 120px;
+ }
 
-   .my-page h1 {
-     font-size: 2em;
-     text-align: center;
-     text-transform: uppercase;
-     padding-bottom: 2%;
-      }
-
-   .bio h3 {
-     margin-top: 5%;
-    }
-
-   .bio {
-     text-align: center;
-   }
-
-   .avatar {
-     position: relative;
-     width: 120px;
-   }
-
- .profile-pic-mypage {
-   height: 8em;
+.profile-pic-mypage {
+  height: 8em;
    width: 8em;
    border-radius: 50%;
    margin-right: 2%;
@@ -47,8 +41,8 @@
    width: 2em;
    border-radius: 50%;
    position: absolute;
-   color: white;
-   background-color:  #272727;
+   color: #ffffff;
+   background-color: #000000;
    bottom: -10%;
    right: -10%;
    z-index: 1;
@@ -81,15 +75,15 @@
 
  .delete-post-button, .save-button {
    margin: 3%;
-   padding:0.35em 1.2em;
-   width: 100px;
-   height: 33px;
+   padding: 0.35em 1.2em;
+   width: 110px;
+   height: 35px;
    border-radius: 2em;
    border:  0.1em solid #000000;
    color: #FFFFFF;
    background-color: #000000;
-   font-size: 0.7em;
-  }
+   font-size: 0.8em;
+   }
 
 
 
@@ -118,7 +112,6 @@ flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-
 }
 
 .delete-post-button, .save-button {
@@ -130,8 +123,6 @@ flex-wrap: wrap;
   border:  0.1em solid #000000;
   color: #FFFFFF;
   background-color: #000000;
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
-
-
 }

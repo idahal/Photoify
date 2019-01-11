@@ -1,9 +1,10 @@
 /*style create account mobile and forms------------------------------------------------ */
+
 .create-account {
   width: 100%;
   height: 70vh;
   margin: auto;
-  padding-top: 10%;
+  padding-top: 5%;
   padding-bottom: 10%;
   background-color: white;
   color: black;
@@ -16,9 +17,8 @@
 .create-account h1 {
   font-size: 2em;
   text-transform: uppercase;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
 }
-
 
 .create-account input[type="text"],
 .create-account input[type="password"],
@@ -36,9 +36,9 @@
   width: 200px;
   height: 44px;
   border-radius: 2em;
-  border:  0.1em solid #272727;
+  border:  0.1em solid #000000;
   color: #FFFFFF;
-  background-color: #272727;
+  background-color: #000000;
   font-size: 1em;
   align-self: center;
 }
@@ -50,11 +50,21 @@
   .create-account {
     width: 100%;
     height: 100vh;
-  }
+    padding-top: 0%;
+    }
 
   .create-account h1 {
     font-size: 2.5em;
     text-transform: uppercase;
     padding-bottom: 5%;
+    padding-top: 0%;
+    }
+
+    .signup {
+      margin: auto;
+      width: 80%;
+      height: 80%;
+      margin-top: 5%;
+      border: 3px solid #ffdd99;
     }
   }
