@@ -14,8 +14,14 @@ require __DIR__.'/../app/autoload.php';
     <link rel="stylesheet" href="assets/styles/main.css">
     <link rel="stylesheet" href="assets/styles/start.css">
     <link rel="stylesheet" href="assets/styles/signup.css">
+    <link rel="stylesheet" href="assets/styles/home.css">
+    <link rel="stylesheet" href="assets/styles/upload_photo.css">
+    <link rel="stylesheet" href="assets/styles/intro.css">
+    <link rel="stylesheet" href="assets/styles/mypage.css">
+    <link rel="stylesheet" href="assets/styles/visit_user.css">
+
+
 </head>
 <body>
-    <?php require __DIR__.'/navigation.php'; ?>
-
     <div class="container">
+    <?php require __DIR__.'/navigation.php'; ?>

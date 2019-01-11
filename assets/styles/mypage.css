@@ -13,6 +13,13 @@
 
    }
 
+   .my-page h1 {
+     font-size: 2em;
+     text-align: center;
+     text-transform: uppercase;
+     padding-bottom: 2%;
+      }
+
    .bio h3 {
      margin-top: 5%;
     }
@@ -32,7 +39,7 @@
    border-radius: 50%;
    margin-right: 2%;
    margin-left: 2%;
-   border: 2.5px #272727 solid;
+   border: 2.5px #000000 solid;
   }
 
 .add-button {
@@ -98,7 +105,6 @@ flex-wrap: wrap;
 .my-gallery-pics {
   width: 250px;
   height: 250px;
-
 }
 
 .my-page input {
