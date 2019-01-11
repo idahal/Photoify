@@ -43,9 +43,5 @@
             </div>
             <?php endforeach; ?>
     </div><!-- show users post end-->
-    <p>
-        <a href="/">Back</a>
-    </p>
-
 </article>
 <?php require __DIR__.'/views/footer.php'; ?>

@@ -11,6 +11,7 @@ require __DIR__.'/../app/autoload.php';
     <title><?php echo $config['title']; ?></title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/main.css">
     <link rel="stylesheet" href="assets/styles/start.css">
     <link rel="stylesheet" href="assets/styles/signup.css">
@@ -19,6 +20,7 @@ require __DIR__.'/../app/autoload.php';
     <link rel="stylesheet" href="assets/styles/intro.css">
     <link rel="stylesheet" href="assets/styles/mypage.css">
     <link rel="stylesheet" href="assets/styles/visit_user.css">
+    <link rel="stylesheet" href="assets/styles/settings.css">
 
 
 </head>

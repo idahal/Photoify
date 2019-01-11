@@ -1,7 +1,8 @@
 <?php require __DIR__.'/views/header.php'; ?>
 
 <article>
-    <!-- <h1><?php echo $config['title']; ?></h1> -->
+    <div class="signup">
+
     <form class="create-account" action="/app/users/signup.php" method="post">
         <h1>Create a account</h1>
       <p>
@@ -27,10 +28,9 @@
       <p>
         <button class="sign-up">Sign up</button>
      </p>
-     <p>
-        <a href="/">I already got a acount</a>
-     </p>
+     <b><a href="/">I already got a account</a></b>
     </form>
+</div>
 </article>
 
 <?php require __DIR__.'/views/footer.php'; ?>

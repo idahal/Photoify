@@ -16,7 +16,7 @@
     <div class="bio">
         <h3><?php echo $_SESSION['user']['first_name'].' '.$_SESSION['user']['last_name']; ?></h3>
         <p><b>Biography:</b> <?php echo $_SESSION['user']['bio']; ?></</p>
-        <br><a href="#">Edit profile</a>
+        <br><a href="myaccount.php">Edit profile</a>
     </div>
 </div>
 <br>

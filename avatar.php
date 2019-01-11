@@ -17,22 +17,9 @@
             <button class="upload-profile-pic" type="submit">Upload</button>
         </form>
         <p>
-            <a href="/myaccount.php">Back</a>
+            <a href="/mypage.php">Back</a>
         </p>
         <!-- upload avatar end -->
 </article>
 
 <?php require __DIR__.'/views/footer.php'; ?>
-
-
-<!-- <div class="upload-avatar-wrapper">
-        <form action="app/users/upload.php" method="post" enctype="multipart/form-data">
-            <button class="upload-avatar-button" type="button" name="button"><i class="far fa-user fa-lg"></i> Change profile photo:
-                <input type="file"  value="upload file" name="profile_pic" id="images" accept=".png, .jpeg, .jpg" multiple required>
-            </button>
-            <button class="upload-profile-pic" type="submit">Upload</button>
-        </form>
-        <p>
-            <a href="/myaccount.php">Back</a>
-        </p>
-    </div> -->
