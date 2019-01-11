@@ -8,21 +8,20 @@
 <!-- if the user is logged in create a welcome message -->
   <?php $userId = $_SESSION['user']['user_id']; ?>
 <div class="top-mypage">
-
-
-<!-- upload avatar -->
+ <!-- upload avatar -->
 <div class="avatar">
     <img class="profile-pic-mypage" src="image/profile/<?php echo $_SESSION['user']['profile_pic'];?>" alt="avatar">
      <a href="/avatar.php"><button class="add-button">+</button></a>
 </div><!-- upload avatar end -->
     <div class="bio">
         <h3><?php echo $_SESSION['user']['first_name'].' '.$_SESSION['user']['last_name']; ?></h3>
-        <p>Biography: <?php echo $_SESSION['user']['bio']; ?></</p>
+        <p><b>Biography:</b> <?php echo $_SESSION['user']['bio']; ?></</p>
         <br><a href="#">Edit profile</a>
     </div>
 </div>
 <br>
 <br>
+<h1>My page</h1>
 <div class="gallery-mypage">
     <?php
             $statement = $pdo->prepare("SELECT * FROM posts WHERE user_id =  '$userId';");
