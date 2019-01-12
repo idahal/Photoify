@@ -17,8 +17,10 @@
 </div> <!-- end upload-file-style -->
   <!-- <p>Add text to your photo</p> -->
       <input type="text" name="content" placeholder=" Add some text....">
-
   <button class="upload-photo" type="submit">Share</button>
 </form>
+    <p>
+        <a href="/">Back</a>
+    </p>
 </article>
 <?php require __DIR__.'/views/footer.php'; ?>

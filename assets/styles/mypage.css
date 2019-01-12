@@ -54,10 +54,10 @@
    text-align: center;
 }
 
- .my-page input {
+ /* .my-page input {
    width: 150px;
    border: 0.1em solid #000000;
- }
+ } */
 
  .gallery-mypage {
   width: 100%;
@@ -69,22 +69,56 @@
  }
 
  .my-gallery-pics {
-   width: 150px;
-   height: 150px;
+   width: 100px;
+   height: 100px;
+ }
+
+ /*style edit-post page*/
+
+ .edit-post-page {
+   width: 100%;
+   margin-top: 5%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  }
+
+ .one-post {
+   width: 300px;
+   height: 300px;
+ }
+
+ .edit-post-page h1 {
+   font-size: 2em;
+   text-transform: uppercase;
+   padding-bottom: 2%;
+ }
+ .edit-post-page input {
+   width: 300px;
+   height: 30px;
+    border: 0.1em solid #000000;
  }
 
  .delete-post-button, .save-button {
-   margin: 3%;
-   padding: 0.35em 1.2em;
-   width: 110px;
-   height: 35px;
+   margin-bottom: 3%;
+   margin-top: 3%;
+   padding:0.35em 1.2em;
+   width: 200px;
+   height: 44px;
    border-radius: 2em;
    border:  0.1em solid #000000;
    color: #FFFFFF;
    background-color: #000000;
-   font-size: 0.8em;
+   font-size: 1em;
    }
 
+   .button-div {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-around;
+   }
 
 
 @media screen and (min-width: 800px) {
@@ -100,29 +134,31 @@ flex-wrap: wrap;
   width: 250px;
   height: 250px;
 }
+/*style edit-post desktop*/
 
-.my-page input {
-  width: 250px;
-  height: 40px;
-  border: 0.1em solid #000000;
-}
+ .one-post {
+   width: 450px;
+   height: 450px;
+ }
+
+ .edit-post-page h1 {
+   font-size: 2em;
+   text-transform: uppercase;
+   padding-bottom: 2%;
+ }
+ .edit-post-page input {
+   width: 450px;
+   height: 30px;
+    border: 0.1em solid #000000;
+ }
 
 .button-div {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  align-content: space-around;
+
 }
 
-.delete-post-button, .save-button {
-  margin: 5% 1% 2% 0%;
-  padding:0.35em 1.2em;
-  width: 120px;
-  height: 44px;
-  border-radius: 2em;
-  border:  0.1em solid #000000;
-  color: #FFFFFF;
-  background-color: #000000;
-  font-size: 0.8em;
-}
+
 }
