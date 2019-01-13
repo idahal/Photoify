@@ -18,7 +18,7 @@
         <br>
         <form class="edit-post" action="app/posts/update.php" method="post">
             <p>
-                <input type="text" value="<?php echo $onePost['content'];?>" name="content" id=content>
+                <input type="text" value="<?php echo $onePost['content'];?>" name="content" id=content maxlength="50">
             </p>
     <div class="button-div">
             <input type="hidden" value="<?php echo $onePost['post_id'];?>" name="post_id" id=user_id>

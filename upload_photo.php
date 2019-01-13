@@ -17,7 +17,7 @@
         <input type="file"  value="upload file" name="post" id="file-upload" style="display:none;" accept=".png, .jpeg, .jpg" multiple required >
         <input id="uploadFile" placeholder=" No File Choosen" disabled="disabled" />
     </div> <!-- end upload-file-style -->
-       <input type="text" name="content" placeholder=" Add some text....">
+       <input type="text" name="content" placeholder=" Add some text...." maxlength="50">
        <button class="upload-photo" type="submit">Share</button>
  </form>
         <p>
