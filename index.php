@@ -1,16 +1,12 @@
-<?php require __DIR__.'/views/header.php';
-
-?>
+<?php require __DIR__.'/views/header.php'; ?>
 
 <article>
+    <!-- If  the user is logged in -->
     <?php
-    // If  the user is logged in
-    if(isset($_SESSION['user'])):  ?>
+        if(isset($_SESSION['user'])):  ?>
     <?php require __DIR__.'/home.php'; ?>
-
-    <?php
-    //If the user is not logged in
-    else: ?>
+<!-- If the user is not logged in -->
+    <?php else: ?>
         <?php require __DIR__.'/start.php'; ?>
     <?php endif; ?>
 </article>

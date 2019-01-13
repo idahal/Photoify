@@ -4,7 +4,7 @@
 
 <article class="share-photos-page">
     <?php require __DIR__.'/views/intro.php'; ?>
-    <h1>Upload profile pic</h1>
+    <h1>Upload profile photo</h1>
         <form class="share-photos" action="app/users/upload.php" method="post" enctype="multipart/form-data">
             <div class="upload-file-style">
                 <label for="file-upload" class="custom-file-upload">

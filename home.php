@@ -1,13 +1,7 @@
 
 <article class="homepage">
-
     <div class="top-gallery-page">
-<!-- if the user is logged in show profile pic -->
-        <!-- <?php if (isset($_SESSION['user'])): ?>
-            <img class="profile-pic-home" src="image/profile/<?php echo $_SESSION['user']['profile_pic'];?>" alt="avatar">
-            <p><?php   echo $_SESSION['user']['first_name']. ' '. $_SESSION['user']['last_name'];?></p>
-        <?php endif; ?> -->
-<?php require __DIR__.'/views/intro.php'; ?>
+        <?php require __DIR__.'/views/intro.php'; ?>
         <a href="upload_photo.php">Share your photos</a>
     </div>
 
@@ -26,21 +20,21 @@
 ?>
 
  <!-- print post, name and comment. -->
- <div class="gallery-page">
-     <h1>The gallery</h1>
-    <?php foreach ($posts as $post): ?>
-        <div class="post">
-            <div class="image-names">
-                <img class="profile-pic-small" src="image/profile/<?php echo $post['profile_pic'];?>" alt="avatar">
-                <!-- lnik to visit different user depanding of the user_id -->
-                <a href="visit_user.php?user_id=<?php echo $post['user_id'];?>">
-                    <p><?php echo $post['first_name'].' '. $post['last_name'];?></p>
-                </a>
+    <div class="gallery-page">
+        <h1>The gallery</h1>
+        <?php foreach ($posts as $post): ?>
+            <div class="post">
+                <div class="image-names">
+                    <img class="profile-pic-small" src="image/profile/<?php echo $post['profile_pic'];?>" alt="avatar">
+                    <!-- link to visit different user depanding of the user_id -->
+                    <a href="visit_user.php?user_id=<?php echo $post['user_id'];?>">
+                        <p><?php echo $post['first_name'].' '. $post['last_name'];?></p>
+                    </a>
             </div><!-- end images-name -->
-        <img class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
-        <p><b><?php echo $post['first_name'].' '. $post['last_name']?></b><?php echo ': '. $post['content'];?></p>
-        <?php
-// select likes from database
+            <img class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
+            <p><b><?php echo $post['first_name'].' '. $post['last_name']?></b><?php echo ': '. $post['content'];?></p>
+    <?php
+        // select likes from database
         $statement = $pdo->prepare(
             'SELECT * FROM likes
             WHERE post_id = :post_id
@@ -49,30 +43,29 @@
             $statement->bindParam(':user_id', $_SESSION['user']['user_id'], PDO::PARAM_INT);
             $statement->execute();
             $alreadyLiked = $statement->fetch(PDO::FETCH_ASSOC);
-            ?>
+    ?>
             <!-- change button if the post is liked or not by the user -->
-            <?php if($alreadyLiked):?>
-                <form class="like-post" action="app/likes/delete.php" method="post">
-                    <button type="submit" name="like" class="like">
-                        <span style="color:red;">
-                            <i class="fas fa-heart fa-lg"></i>
-                        </span>
-                    </button>
+        <?php if($alreadyLiked):?>
+            <form class="like-post" action="app/likes/delete.php" method="post">
+                <button type="submit" name="like" class="like">
+                    <span style="color:red;">
+                        <i class="fas fa-heart fa-lg"></i>
+                    </span>
+                </button>
                     <p>Liked by: <?php echo $post['like']; ?></p>
                     <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=post_id>
-                </form>
-            <?php else: ?>
-                <form class="like-post" action="app/likes/like.php" method="post">
-                    <button type="submit" name="like" class="like">
-                        <i class="far fa-heart fa-lg"></i>
-                    </button>
+            </form>
+    <?php else: ?>
+            <form class="like-post" action="app/likes/like.php" method="post">
+                <button type="submit" name="like" class="like">
+                    <i class="far fa-heart fa-lg"></i>
+                </button>
                     <p>Liked by: <?php echo $post['like']; ?></p>
                     <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=post_id>
-                </form>
-            <?php endif; ?>
-            <br>
-            <br>
+            </form>
+    <?php endif; ?>
+            <br><br>
         </div><!-- end post -->
-        <?php endforeach; ?>
+    <?php endforeach; ?>
     </div><!-- end gallery-page -->
 </article>
