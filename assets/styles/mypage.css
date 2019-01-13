@@ -54,11 +54,6 @@
    text-align: center;
 }
 
- /* .my-page input {
-   width: 150px;
-   border: 0.1em solid #000000;
- } */
-
  .gallery-mypage {
   width: 100%;
   display: flex;
@@ -120,6 +115,14 @@
      justify-content: space-around;
    }
 
+   @media screen and (min-width: 600px) {
+
+     .my-gallery-pics {
+       width: 150px;
+       height: 150px;
+     }
+
+   }
 
 @media screen and (min-width: 800px) {
 /*style my page desktop*/
@@ -137,8 +140,8 @@ flex-wrap: wrap;
 /*style edit-post desktop*/
 
  .one-post {
-   width: 450px;
-   height: 450px;
+   width: 400px;
+   height: 400px;
  }
 
  .edit-post-page h1 {
@@ -147,7 +150,7 @@ flex-wrap: wrap;
    padding-bottom: 2%;
  }
  .edit-post-page input {
-   width: 450px;
+   width: 420px;
    height: 30px;
     border: 0.1em solid #000000;
  }
@@ -156,7 +159,7 @@ flex-wrap: wrap;
   display: flex;
   flex-direction: row;
   align-items: center;
-  align-content: space-around;
+  align-content: space-between;
 
 }
 
