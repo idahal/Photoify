@@ -1,5 +1,4 @@
 <?php
-// Always start by loading the default application setup.
 require __DIR__.'/../app/autoload.php';
 ?>
 <!DOCTYPE html>
@@ -21,8 +20,6 @@ require __DIR__.'/../app/autoload.php';
     <link rel="stylesheet" href="assets/styles/mypage.css">
     <link rel="stylesheet" href="assets/styles/visit_user.css">
     <link rel="stylesheet" href="assets/styles/settings.css">
-
-
 </head>
 <body>
     <div class="container">
