@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 declare(strict_types=1);
 require __DIR__.'/../autoload.php';
 
@@ -15,11 +15,11 @@ require __DIR__.'/../autoload.php';
             die(var_dump($pdo->errorInfo()));
         }
 
-        // binds variables to parameteres for insert statement
+
         $statement->bindParam(':bio', $bio, PDO::PARAM_STR);
         $statement->bindParam(':user_id', $id, PDO::PARAM_INT);
 
         $statement->execute();
         redirect('/mypage.php');
 
-}
+} -->

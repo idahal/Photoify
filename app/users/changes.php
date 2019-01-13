@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+
 require __DIR__.'/../autoload.php';
 
 if (isset($_POST['first_name'], $_POST['last_name'],$_POST['email'],$_POST['bio'])) {
@@ -8,11 +9,9 @@ if (isset($_POST['first_name'], $_POST['last_name'],$_POST['email'],$_POST['bio'
         $lastName = trim(filter_var($_POST['last_name'], FILTER_SANITIZE_STRING));
         $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
         $bio = filter_var($_POST['bio'],FILTER_SANITIZE_STRING);
-        // $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-
-
-    $statement = $pdo->prepare('UPDATE users
+        $statement = $pdo->prepare(
+        'UPDATE users
         SET first_name = :first_name, last_name = :last_name, email = :email, bio = :bio
         WHERE user_id = :user_id');
 
@@ -30,13 +29,16 @@ if (isset($_POST['first_name'], $_POST['last_name'],$_POST['email'],$_POST['bio'
 
     $statement->execute();
 
-    // select data agian to update the changes
-    $statement = $pdo->prepare('SELECT * FROM users WHERE email = :email');
+    // select data again to update the changes
+    $statement = $pdo->prepare(
+        'SELECT *
+        FROM users
+        WHERE email = :email');
     // bind the parameter to the if(isset) so it's exists
     $statement->bindParam(':email', $email);
     // execute the code
     $statement->execute();
-    // fecth the data from the database, fetch_assic get a clean output
+    // fetch the data from the database, fetch_assic get a clean output
     $user = $statement->fetch(PDO::FETCH_ASSOC);
     $_SESSION['user'] = $user;
     redirect('/mypage.php');
