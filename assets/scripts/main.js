@@ -1,6 +1,6 @@
 'use strict';
 
-// navbar
+// navbar toogle
 let mainNav = document.getElementById('js-menu');
 let navBarToggle = document.getElementById('js-navbar-toggle');
 
@@ -8,11 +8,8 @@ navBarToggle.addEventListener('click', function () {
   mainNav.classList.toggle('active');
 });
 
-//
-// let fileUpload = document.getElementById("file-upload");
-// let uploadFile = document.getElementById("uploadFile");
 
-//display wich file user pick
+//display wich file user choose when upload image
 const fileUpload = document.getElementById("file-upload")
   if(fileUpload){
   fileUpload.addEventListener('change', function() {

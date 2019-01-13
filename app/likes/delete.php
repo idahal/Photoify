@@ -9,7 +9,10 @@ if (isset($_POST['post_id'])) {
     $postId = $_POST['post_id'];
 
 // Dislike a post
- $statement = $pdo->prepare('DELETE FROM likes WHERE post_id = :post_id AND user_id = :user_id');
+ $statement = $pdo->prepare(
+     'DELETE FROM likes
+     WHERE post_id = :post_id
+     AND user_id = :user_id');
 
  if (!$statement){
     die(var_dump($pdo->errorInfo()));
@@ -18,7 +21,6 @@ if (isset($_POST['post_id'])) {
  $statement->bindParam(':post_id', $postId, PDO::PARAM_INT);
  $statement->bindParam(':user_id', $id, PDO::PARAM_INT);
  $statement->execute();
-
 }
 
 redirect('/');

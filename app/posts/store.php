@@ -6,7 +6,6 @@ require __DIR__.'/../autoload.php';
 
 $errors = [];
 
-// In this file we store/insert new posts in the database.
 if (isset($_POST['content'],$_FILES['post'])) {
     $post = $_FILES['post'];
     $userId = $_SESSION['user']['user_id'];
@@ -17,7 +16,6 @@ if (isset($_POST['content'],$_FILES['post'])) {
     if(!in_array($post['type'], ['image/png', 'image/jpeg'])) {
         $errors[] = 'error';
     }
-
 
     if($post['size'] > 4194304) {
         $errors[] = 'to big file';

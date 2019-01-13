@@ -8,7 +8,9 @@ require __DIR__.'/../autoload.php';
 if (isset($_POST['post_id'])) {
     $postId = $_POST['post_id'];
 
-    $statement = $pdo->prepare('DELETE FROM posts WHERE post_id = :post_id');
+    $statement = $pdo->prepare(
+        'DELETE FROM posts
+        WHERE post_id = :post_id');
 
     if (!$statement){
        die(var_dump($pdo->errorInfo()));
