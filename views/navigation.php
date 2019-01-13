@@ -6,12 +6,7 @@
           <rect y="20.3999" width="36" height="3.0" rx="1.8" fill="#000000"/>
         </svg>
       </span>
-      <!-- <?php if (isset($_SESSION['user'])): ?>
-          <a  class="logo" href="#"><?php echo $_SESSION['user']['first_name']. ' '. $_SESSION['user']['last_name']; ?></a>
-      <?php else: ?>
-          <<a href="#" class="logo">Photoify</a>
-      <?php endif; ?> -->
-      <a href="/" class="logo"><i class="fas fa-camera-retro fa-lg"></i> Photoify</a>
+        <a href="/" class="logo"><i class="fas fa-camera-retro fa-lg"></i> Photoify</a>
         <ul class="main-nav" id="js-menu">
             <li>
                 <?php if (isset($_SESSION['user'])): ?>
@@ -27,21 +22,11 @@
                     <a class="nav-link" href="/about.php">About</a>
                 <?php endif; ?>
             </li>
-            <!-- <li>
-                <?php if (isset($_SESSION['user'])): ?>
-                    <a class="nav-link" href="/settings.php">My settings</a>
-                <?php endif; ?>
-            </li> -->
             <li>
                 <?php if (isset($_SESSION['user'])): ?>
                     <a class="nav-link" href="/myaccount.php">Edit profile</a>
                 <?php endif; ?>
             </li>
-            <!-- <li>
-                <?php if (isset($_SESSION['user'])): ?>
-                    <a class="nav-link" href="/password.php">Change password</a>
-                <?php endif; ?>
-            </li> -->
             <li>
                 <?php if (isset($_SESSION['user'])): ?>
                     <a class="nav-link" href="app/users/logout.php">Logout</a>
