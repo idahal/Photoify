@@ -4,7 +4,7 @@ declare(strict_types=1);
 require __DIR__.'/../autoload.php';
 
     if (isset($_POST['first_name'], $_POST['last_name'],$_POST['email'], $_POST['password'], $_POST['confirm_password'])) {
-        // Checks if passwords match
+        // checks if passwords match
         if ($_POST['password'] === $_POST['confirm_password']) {
             $firstName = trim(filter_var($_POST['first_name'], FILTER_SANITIZE_STRING));
             $lastName = trim(filter_var($_POST['last_name'], FILTER_SANITIZE_STRING));
@@ -38,6 +38,4 @@ require __DIR__.'/../autoload.php';
             redirect('/');
         }
     }
-
-
 ?>

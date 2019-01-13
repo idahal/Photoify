@@ -42,10 +42,8 @@ if(count($errors) === 0) {
         die(var_dump($pdo->errorInfo()));
     }
     redirect('/avatar.php');
-}
+ }
 
 }
-
-
 
 ?>
