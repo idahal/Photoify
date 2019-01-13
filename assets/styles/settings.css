@@ -1,0 +1,103 @@
+/*Here I style the settings myaccount and password*/
+.account-settings-desktop {
+  display: none;
+}
+
+.account-settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box {
+width: 60%;
+height: 60%;
+margin-top: 5%;
+border: 1px solid #ffdd99;
+}
+
+.box a {
+  color: #000000;
+}
+
+.box li {
+  list-style: none;
+  margin: 10% auto;
+  }
+
+
+.box h1 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  padding-bottom: 2%;
+  text-align: center;
+  margin-top: 5%;
+}
+
+/*style settings page*/
+.create-account h1 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  padding-bottom: 2%;
+  text-align: center;
+  margin-top: 5%;
+}
+
+/*style delete page*/
+.alert-box {
+  width: 250px;
+  height: 100px;
+  color: #ff1a1a;
+  text-align: center;
+}
+
+/*STYLE TO DESKTOP*/
+ @media screen and (min-width: 800px) {
+
+.account-settings {
+  display: none;
+}
+
+.account-settings-desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  }
+
+  .first-box, .second-box, .third-box {
+    width: 60%;
+    height: 60%;
+    margin-top: 5%;
+    border: 3px solid #ffdd99;
+  }
+
+  .my-account {
+    width: 100%;
+    height: 80vh;
+    margin: auto;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+  }
+
+  .my-account h1 {
+    font-size: 2em;
+    text-transform: uppercase;
+    padding-bottom: 5%;
+  }
+
+  .my-account input[type="text"],
+  .my-account input[type="password"],
+  .my-account input[type="email"] {
+    border: 0.1em solid #000000;
+    margin-top: 1%;
+    margin-bottom: 4%;
+    width: 270px;
+    height: 44px;
+  }
+}
