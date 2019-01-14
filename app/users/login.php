@@ -12,7 +12,7 @@ if(isset($_POST['email'], $_POST['password'])) {
     $email = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
     $password =  $_POST['password'];
     if($email === '' || $password === ''){
-        $errors[]= ['You must enter the fields'];
+        $errors[]= 'You must enter the fields';
     };
     // prepare the code to the database
     $statement = $pdo->prepare('SELECT * FROM users WHERE email = :email');
@@ -25,12 +25,12 @@ if(isset($_POST['email'], $_POST['password'])) {
     // print_r($user);
     // if the email don`t exits in the database
     if (!$user) {
-        $_SESSION['errors']= ['User do not exists'];
+        $_SESSION['errors']= ['The account does not exist. Please, enter another account'];
         redirect('/');
     }
 
     if (!password_verify($_POST['password'], $user['password'])) {
-        $_SESSION['errors'] = ['Wrong password'];
+        $_SESSION['errors'] = ['Your password is incorrect. Try again'];
         redirect('/');
     }
 

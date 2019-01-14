@@ -11,12 +11,12 @@ $errors = [];
 if(isset($_FILES['profile_pic'])) {
     $profilePic = $_FILES['profile_pic'];
     if(!in_array($profilePic['type'], ['image/png', 'image/jpeg'])) {
-        $errors[] = 'error';
+        $errors[] = 'The file type is wrong, try again.';
     }
 
 // check file size
 if($profilePic['size'] > 4194304) {
-    $errors[] = 'to big file';
+    $errors[] = 'The file is to big, try again.';
 }
 
 // split file in filnmae and filetype
@@ -32,7 +32,9 @@ if(count($errors) === 0) {
     move_uploaded_file($profilePic['tmp_name'], $destination);
     $_SESSION['user']['profile_pic'] = $fileName;
 
-    $sql = "UPDATE users SET profile_pic = '$fileName' WHERE user_id = '$userId';";
+    $sql = "UPDATE users
+            SET profile_pic = '$fileName'
+            WHERE user_id = '$userId';";
 
     $statement = $pdo->query($sql);
 
@@ -42,6 +44,11 @@ if(count($errors) === 0) {
         die(var_dump($pdo->errorInfo()));
     }
     redirect('/avatar.php');
+ }
+
+ else {
+     $_SESSION['errors'] = $errors;
+     redirect('/avatar.php');
  }
 
 }

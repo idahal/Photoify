@@ -8,7 +8,7 @@ $errors = [];
     if (isset($_POST['first_name'], $_POST['last_name'],$_POST['email'], $_POST['password'], $_POST['confirm_password'])) {
         // check if password match if not display error
         if ($_POST['password'] !== $_POST['confirm_password']) {
-            $_SESSION['errors']= ['Password does not match, please try again'];
+            $_SESSION['errors']= ['Password\'s does not match. Try again'];
             redirect('/signup.php');
         }
         // checks if passwords match to continue
@@ -34,7 +34,7 @@ $errors = [];
             $statement->bindParam(':password', $password, PDO::PARAM_STR);
 
             if(!$statement->execute()){
-                $_SESSION['errors']= ['Email already exists, please try again'];
+                $_SESSION['errors']= ['That email is already used. Try again.'];
                 redirect('/signup.php');
                 // alert('email already taken.');
             }

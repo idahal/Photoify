@@ -14,11 +14,11 @@ if (isset($_POST['content'],$_FILES['post'])) {
 
 
     if(!in_array($post['type'], ['image/png', 'image/jpeg'])) {
-        $errors[] = 'error';
+        $errors[] = 'The file type is wrong, try again.';
     }
 
     if($post['size'] > 4194304) {
-        $errors[] = 'Sorry, to big file';
+        $errors[] = 'The file is to big, try again.';
     }
 
     $fileExt = explode('.', $post['name']);
@@ -44,7 +44,7 @@ if (isset($_POST['content'],$_FILES['post'])) {
     } // -----------------------trying
         else {
             $_SESSION['errors'] = $errors;
-            redirect('../../upload_photo.php');
+            redirect('/upload_photo.php');
         }
         // -----------------------trying
 }

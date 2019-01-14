@@ -16,6 +16,12 @@ body a {
   color: #001440;
 }
 
+.error {
+  color: #ff1a1a;
+  text-align: center;
+  margin-top: 2%;
+}
+
 /*style container mobile*/
 .container {
   margin: 0px;
