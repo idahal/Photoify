@@ -24,3 +24,10 @@ require __DIR__.'/../app/autoload.php';
 <body>
     <div class="container">
     <?php require __DIR__.'/navigation.php'; ?>
+    <?php if (isset($_SESSION['errors'])):
+        $errors = $_SESSION['errors'];
+        foreach ($errors as $error):
+            echo $error;
+        endforeach;
+    endif; ?>
+    <?php unset($_SESSION['errors'])?>

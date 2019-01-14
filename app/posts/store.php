@@ -18,7 +18,7 @@ if (isset($_POST['content'],$_FILES['post'])) {
     }
 
     if($post['size'] > 4194304) {
-        $errors[] = 'to big file';
+        $errors[] = 'Sorry, to big file';
     }
 
     $fileExt = explode('.', $post['name']);
@@ -41,5 +41,10 @@ if (isset($_POST['content'],$_FILES['post'])) {
         $statement->execute();
 
         redirect('/');
-    }
+    } // -----------------------trying
+        else {
+            $_SESSION['errors'] = $errors;
+            redirect('../../upload_photo.php');
+        }
+        // -----------------------trying
 }
