@@ -60,12 +60,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
- }
+  justify-content: flex-start;
+}
 
  .my-gallery-pics {
    width: 100px;
    height: 100px;
+   padding-left: 5%;
+   padding-top: 5%;
  }
 
  /*style edit-post page*/
@@ -129,7 +131,7 @@
 .gallery-mypage {
 display: flex;
 flex-direction: row;
-justify-content: space-around;
+justify-content: flex-start;
 flex-wrap: wrap;
 }
 

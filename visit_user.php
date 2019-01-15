@@ -3,12 +3,10 @@
 <!-- if user login show visit_user page -->
 <?php if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}?>
 
-<?php if (isset($_GET['user_id'])): ?>
-<?php
+<?php if (isset($_GET['user_id'])):
     $oneUser =  oneUser();
     $postsUser = visitUser();
-?>
-<?php endif; ?>
+    endif; ?>
 
 <!-- show users photos -->
 <article class="user-page">
