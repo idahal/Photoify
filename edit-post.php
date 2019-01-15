@@ -4,14 +4,9 @@
 <?php if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}?>
 
 <?php if (isset($_GET['post_id'])): ?> <?php
-    $editPost = filter_var($_GET['post_id'],FILTER_SANITIZE_STRING);
-    // prepare the code to the database get the users name and profile pic
-    $statement = $pdo->prepare("SELECT * FROM posts WHERE post_id = $editPost");
-    // execute the code
-    $statement->execute();
-    // fecth the data from the database, fetch_assic get a clean output
-    $onePost = $statement->fetch(PDO::FETCH_ASSOC); ?>
-    <?php endif; ?>
+    $onePost = editPosts();
+    ?>
+        <?php endif; ?>
 <div class="edit-post-page">
     <h1>Edit your photo</h1>
         <img class="one-post" src="image/post/<?php echo $onePost['post'];?>" alt="photoify">

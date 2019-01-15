@@ -6,17 +6,8 @@
     </div>
 
 <?php
-    // join users column with posts column. Print post, name and comment.
-    $statement = $pdo->prepare(
-        'SELECT a.post, a.content, a.post_id, c.first_name, c.last_name, c.profile_pic, c.user_id, count(l.post_like)
-        AS "like"
-        FROM posts a
-        LEFT JOIN users c ON a.user_id=c.user_id
-		LEFT JOIN likes l ON a.post_id=l.post_id
-		GROUP BY a.post_id
-		ORDER BY a.date DESC;');
-        $statement->execute();
-        $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+$posts = postFeed();
+
 ?>
 
  <!-- print post, name and comment. -->
@@ -34,7 +25,6 @@
             <img class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
             <p><b><?php echo $post['first_name'].' '. $post['last_name']?></b><?php echo ': '. $post['content'];?></p>
     <?php
-        // select likes from database
         $statement = $pdo->prepare(
             'SELECT * FROM likes
             WHERE post_id = :post_id
@@ -43,6 +33,7 @@
             $statement->bindParam(':user_id', $_SESSION['user']['user_id'], PDO::PARAM_INT);
             $statement->execute();
             $alreadyLiked = $statement->fetch(PDO::FETCH_ASSOC);
+
     ?>
             <!-- change button if the post is liked or not by the user -->
         <?php if($alreadyLiked):?>

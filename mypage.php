@@ -22,33 +22,17 @@
 <div class="gallery-mypage">
 <!-- select all post from the user  -->
     <?php
-            $statement = $pdo->prepare("SELECT * FROM posts WHERE user_id =  '$userId';");
-            $statement->execute();
-            $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $posts = myPosts();
+            // $statement = $pdo->prepare("SELECT * FROM posts WHERE user_id =  '$userId';");
+            // $statement->execute();
+            // $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
      ?>
         <?php foreach ($posts as $post): ?>
             <div class="posts"><!-- show users post -->
                 <a href="edit-post.php?post_id=<?php echo $post['post_id'];?>">
                     <img class="my-gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
                 </a>
-            <!-- <img class="my-gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify"> -->
-            <!-- <br>
-                <form class="edit-post" action="app/posts/update.php" method="post">
-                    <p>
-                        <input type="text" value="<?php echo $post['content'];?>" name="content" id=content>
-                    </p>
-            <div class="button-div">
-                        <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=user_id>
-                    <button type="submit" class="save-button">Update post</button>
-                    </form>
-                <form class="delete-post" action="app/posts/delete.php" method="post">
-                    <button class="delete-post-button" type="submit" class="delete">Delete post</button>
-                    <input type="hidden" value="<?php echo $post['post_id'];?>" name="post_id" id=post_id>
-            </div>
-        </form>
-            <br>
-            <br> -->
-        </div><!-- show users post end-->
+            </div><!-- show users post end-->
             <?php endforeach; ?>
 </div><!--gallery-mypage end-->
 </article>

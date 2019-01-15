@@ -11,6 +11,4 @@
     <?php endif; ?>
 </article>
 
-<!-- <?php unset($_SESSION['messages']); ?> -->
-
 <?php require __DIR__.'/views/footer.php'; ?>
