@@ -19,7 +19,7 @@ if (isset ($_POST['password'], $_POST['new_password'], $_POST['confirm_password'
       if (password_verify($_POST['password'], $user)) {
 
     if ($_POST['new_password'] === $_POST['confirm_password']) {
-        $id = $_SESSION['user'];
+        $id = $_SESSION['user']['user_id'];
         $newPassword = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
         $updateStatement = $pdo->prepare(
             'UPDATE users
@@ -32,7 +32,7 @@ if (isset ($_POST['password'], $_POST['new_password'], $_POST['confirm_password'
         }
 
         // binds variables to parameteres for insert statement
-        $updateStatement->bindParam(':password', $newPassword, PDO::PARAM_STR);
+        $updateStatement->bindParam(':new_password', $newPassword, PDO::PARAM_STR);
         $updateStatement->bindParam(':user_id', $id, PDO::PARAM_INT);
         // execute the code
         $updateStatement->execute();
