@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
 
+$errors = [];
+
 //check if the new password match
 if (isset ($_POST['password'], $_POST['new_password'], $_POST['confirm_password'])) {
     $user = $_SESSION['user'];
@@ -16,6 +18,24 @@ if (isset ($_POST['password'], $_POST['new_password'], $_POST['confirm_password'
     $user = $statement->fetch(PDO::FETCH_ASSOC);
     $user =( $user['password']);
     // die(var_dump($user));
+    //
+    //
+    if (!password_verify($_POST['password'], $user)) {
+        $_SESSION['errors'] = ['Your current password is incorrect. Try again'];
+        redirect('/myaccount.php');
+    }
+
+    if ($_POST['new_password'] !== $_POST['confirm_password']) {
+        $_SESSION['errors']= ['Password\'s does not match. Try again'];
+        redirect('/myaccount.php');
+    }
+
+    if (count($errors) > 0 ){
+        $_SESSION['errors'] = $errors;
+        redirect('/myaccount.php');
+    }
+
+
       if (password_verify($_POST['password'], $user)) {
 
     if ($_POST['new_password'] === $_POST['confirm_password']) {

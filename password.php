@@ -6,7 +6,7 @@
     <form class="create-account" action="app/users/password.php" method="post">
         <h1>Change password</h1>
         <p>
-    <label>Your password</label><br>
+    <label>Your current password</label><br>
     <input type="password" name="password" required>
     </p>
         <p>
@@ -25,7 +25,5 @@
 </p>
 </form>
 </article>
-<!--
-<?php if(isset($_SESSION['error'])){ unset($_SESSION['error']) ;}; ?> -->
 
 <?php require __DIR__.'/views/footer.php'; ?>
