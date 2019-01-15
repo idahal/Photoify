@@ -30,5 +30,4 @@
     </form>
 </article>
 
-<?php if(isset($_SESSION['error'])){ unset($_SESSION['error']) ;}; ?>
 <?php require __DIR__.'/views/footer.php'; ?>

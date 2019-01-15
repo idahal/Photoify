@@ -54,7 +54,7 @@
         <form class="my-account" action="app/users/password.php" method="post">
             <h1>Change password</h1>
             <p>
-                <label>Your password</label><br>
+                <label>Your current password</label><br>
                 <input type="password" name="password" required>
             </p>
             <p>
