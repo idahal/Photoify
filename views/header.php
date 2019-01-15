@@ -28,8 +28,8 @@ require __DIR__.'/../app/autoload.php';
     <!-- display errors -->
     <?php if (isset($_SESSION['errors'])):
         $errors = $_SESSION['errors'];
-        foreach ($errors as $error):
-            echo $error;
-        endforeach;
+        foreach ($errors as $error): ?>
+            <p class="error"><?php  echo $error;?></p>
+        <?php endforeach;
     endif; ?>
     <?php unset($_SESSION['errors'])?>
