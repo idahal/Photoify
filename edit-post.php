@@ -3,7 +3,8 @@
 <!-- if user login show visit_user page -->
 <?php if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}?>
 
-<?php if (isset($_GET['post_id'])): ?> <?php
+<?php if (isset($_GET['post_id'])): ?>
+<?php
     $onePost = editPosts();
     ?>
         <?php endif; ?>

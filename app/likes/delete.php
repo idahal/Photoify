@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
 
+//check if the user is login
+if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}
+
 if (isset($_POST['post_id'])) {
     $id = $_SESSION['user']['user_id'];
     $postId = $_POST['post_id'];

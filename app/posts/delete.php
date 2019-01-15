@@ -4,13 +4,18 @@ declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
 
+//check if the user is login
+if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}
+
 //  delete posts in the database.
 if (isset($_POST['post_id'])) {
+    $id = $_SESSION['user']['user_id'];
     $postId = $_POST['post_id'];
 
     $statement = $pdo->prepare(
         'DELETE FROM posts
-        WHERE post_id = :post_id');
+        WHERE post_id = :post_id
+        AND user_id = :user_id');
 
     if (!$statement){
        die(var_dump($pdo->errorInfo()));
@@ -18,7 +23,7 @@ if (isset($_POST['post_id'])) {
 
      // binds variables to parameteres for insert statement
      $statement->bindParam(':post_id', $postId, PDO::PARAM_INT);
-
+     $statement->bindParam(':user_id', $id, PDO::PARAM_INT);
      $statement->execute();
      redirect('/mypage.php');
      }
