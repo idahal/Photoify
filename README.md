@@ -11,6 +11,17 @@ The assignment was to create a instagram clone.
 * Change the document root to point at photoify.
 * Open the `index.php` file in your browser.
 
+## Features
+* As a user you can create an account and login/logout.
+* As a user you can edit your account email, password and biography.
+* As a user you can upload a profile avatar image.
+* As a user you can create new posts with image and description.
+* As a user you can edit your posts.
+* As a user you can delete your posts.
+* As a user you can like and dislike posts.
+* As a user you can delete your account along with all posts and comments.
+* As a user you can visit different users page to see theirs uploaded photos.
+
 
 ## Tested
 The project have been tested in:
