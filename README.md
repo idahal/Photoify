@@ -8,8 +8,8 @@ The assignment was to create a instagram clone. The project is written in HTML, 
 * Start by get a copy of the repo using [this link](https://github.com/idahal/Photoify) in GitHub Desktop or `git clone https://github.com/idahal/Photoify.git` in bash.
 * Save the file in the root of your webserver.
 * Open your local web server, for exampel [MAMP](https://www.mamp.info/en/).
-* Change the document root to point at photoify.
-* Open the `index.php` file in your browser.
+* Change the document root to point at photoify. In MAMP choose Peferences then Web Server and Select.
+* Start MAMP localhost in your browser.
 
 ## Features
 * As a user you can create an account and login/logout.
@@ -19,18 +19,18 @@ The assignment was to create a instagram clone. The project is written in HTML, 
 * As a user you can edit your posts.
 * As a user you can delete your posts.
 * As a user you can like and dislike posts.
-* As a user you can delete your account along with all posts and comments.
+* As a user you can delete your account along with all posts and likes.
 * As a user you can visit different users page to see theirs uploaded photos.
 
 
 ## Tested
 The project have been tested in:
 
-|Name         | OS          | Web browser     |
-|-------------| ----------- |-----------------|
-|Ida Hallner  |  Windows    | Mozilla Firefox |
-|Maria Eidland|  Windows    | Google Chrome   |
-|-------------|  Mac not yet|-------------    |
+|Name          | OS         | Web browser     |
+|--------------|------------|-----------------|
+|Ida Hallner   | Windows    | Mozilla Firefox |
+|Maria Eidland | Windows    | Google Chrome   |
+|Fredrik Leeman| Mac        | Google Chrome   |
 
 
 ## License
