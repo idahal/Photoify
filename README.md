@@ -1,7 +1,7 @@
 # Photoify
 
 ## Assignment
-The assignment was to create a instagram clone.
+The assignment was to create a instagram clone. The project is written in HTML, CSS, JavaScript and PHP and was built using a SQLite database.
 
 ## Getting Started
 
@@ -28,8 +28,8 @@ The project have been tested in:
 
 |Name         | OS          | Web browser     |
 |-------------| ----------- |-----------------|
-|-------------|  Windows    | Mozilla Firefox |
-|-------------|  Windows    | Google Chrome   |
+|Ida Hallner  |  Windows    | Mozilla Firefox |
+|Maria Eidland|  Windows    | Google Chrome   |
 |-------------|  Mac not yet|-------------    |
 
 

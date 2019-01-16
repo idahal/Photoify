@@ -10,6 +10,7 @@
 <!-- here the user can upload photos -->
 <h1>Upload photos</h1>
 <form class="share-photos" action="app/posts/store.php" method="post" enctype="multipart/form-data">
+    <p class="small">Accepted filetypes: .jpg .jpeg .png Maxfilesize: 4MB</p>
     <div class="upload-file-style">
         <label for="file-upload" class="custom-file-upload">
             <i class="far fa-image fa-lg"></i>

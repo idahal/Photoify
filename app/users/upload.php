@@ -11,7 +11,7 @@ $errors = [];
 //if the file not allowed type show error
 if(isset($_FILES['profile_pic'])) {
     $profilePic = $_FILES['profile_pic'];
-    if(!in_array($profilePic['type'], ['image/png', 'image/jpeg'])) {
+    if(!in_array($profilePic['type'], ['image/png', 'image/jpeg', 'image/jpg'])) {
         $errors[] = 'The file type is wrong, try again.';
     }
 

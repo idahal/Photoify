@@ -19,23 +19,33 @@
         margin-top: 10%;
       }
 
+      .small {
+        color: #545454;
+        font-size: 0.7em;
+      }
+
       .custom-file-upload {
       padding:0.35em 1.2em;
-      font-size: 0.8em;
+      font-size: 1em;
+      width: 160px;
+      height: 35px;
+      text-align: center;
       border:  0.1em solid #000000;
       border-radius: 2em;
       color: #000000;
       background-color: #FFFFFF;
       text-transform: uppercase;
+      align-self: center;
     }
 
     #uploadFile {
       text-align: center;
-      height: 44px;
-      width: 100px;
+      height: 35px;
+      width: 250px;
       background-color: white;
-      color: black;
+      color: #545454;
       border: none;
+      font-size: 0.7em;
     }
 
     .share-photos input[type="text"] {
@@ -43,6 +53,12 @@
     margin-top: 1%;
     width: 270px;
     height: 44px;
+    }
+
+    .upload-file-style {
+      margin-top: 2%;
+      display: flex;
+      flex-direction: column;
     }
 
     .upload-photo, .upload-profile-pic {

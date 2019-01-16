@@ -13,6 +13,6 @@ navBarToggle.addEventListener('click', function () {
 const fileUpload = document.getElementById("file-upload")
   if(fileUpload){
   fileUpload.addEventListener('change', function() {
-    document.getElementById("uploadFile").value = this.value;
+    document.getElementById("uploadFile").value = this.value.replace("C:\\fakepath\\", "");
   });
 }

@@ -6,10 +6,10 @@
     </div>
 
 <?php
-$posts = postFeed();
+
+    $posts = postFeed();
 
 ?>
-
  <!-- print post, name and comment. -->
     <div class="gallery-page">
         <h1>The gallery</h1>
@@ -21,10 +21,11 @@ $posts = postFeed();
                     <a href="visit_user.php?user_id=<?php echo $post['user_id'];?>">
                         <p><?php echo $post['first_name'].' '. $post['last_name'];?></p>
                     </a>
-            </div><!-- end images-name -->
-            <img class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
-            <p><b><?php echo $post['first_name'].' '. $post['last_name']?></b><?php echo ': '. $post['content'];?></p>
+                </div><!-- end images-name -->
+                    <img class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
+                    <p><b><?php echo $post['first_name'].' '. $post['last_name']?></b><?php echo ': '. $post['content'];?></p>
     <?php
+    // get the likes from the database. I have tried to create a function for these, but it did't work.
         $statement = $pdo->prepare(
             'SELECT * FROM likes
             WHERE post_id = :post_id
@@ -33,7 +34,6 @@ $posts = postFeed();
             $statement->bindParam(':user_id', $_SESSION['user']['user_id'], PDO::PARAM_INT);
             $statement->execute();
             $alreadyLiked = $statement->fetch(PDO::FETCH_ASSOC);
-
     ?>
             <!-- change button if the post is liked or not by the user -->
         <?php if($alreadyLiked):?>

@@ -13,7 +13,7 @@ if (isset($_POST['content'],$_FILES['post'])) {
     $date = date('Y-m-d H:i:s');
 
 
-    if(!in_array($post['type'], ['image/png', 'image/jpeg'])) {
+    if(!in_array($post['type'], ['image/png', 'image/jpeg', 'image/jpg'])) {
         $errors[] = 'The file type is wrong, try again.';
     }
 

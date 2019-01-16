@@ -61,7 +61,7 @@ function editPosts(){
     }
 
 /**
- * function to print photor on my page
+ * function to print user own photos on my page
  *
  *
  */
@@ -101,28 +101,28 @@ function oneUser() {
   }
 
 /**
- * prepare the code to the database get the users posts and content
+ * get the users posts and content
  *
  *
  */
     function visitUser() {
-    $config = require __DIR__.'/config.php';
-    $pdo = new PDO($config['database_path']);
-    $visitUser = filter_var($_GET['user_id'],FILTER_SANITIZE_STRING);
-    $newstatement = $pdo->prepare(
-        "SELECT *
-        FROM posts
-        WHERE user_id = $visitUser
-        ORDER BY date DESC");
-        // execute the code
-        $newstatement->execute();
-        // fecth the data from the database, fetch_assic get a clean output
-        $postsUser = $newstatement->fetchAll(PDO::FETCH_ASSOC);
-        return $postsUser;
-    }
+        $config = require __DIR__.'/config.php';
+        $pdo = new PDO($config['database_path']);
+        $visitUser = filter_var($_GET['user_id'],FILTER_SANITIZE_STRING);
+        $newstatement = $pdo->prepare(
+            "SELECT *
+            FROM posts
+            WHERE user_id = $visitUser
+            ORDER BY date DESC");
+            // execute the code
+            $newstatement->execute();
+            // fecth the data from the database, fetch_assic get a clean output
+            $postsUser = $newstatement->fetchAll(PDO::FETCH_ASSOC);
+            return $postsUser;
+        }
 
 
-// trying to get a function to get show if the post is liked or not
+// trying to get a function to show if the post is liked or not
 // function selectLikes() {
 //     // select likes from database
 //     $config = require __DIR__.'/config.php';

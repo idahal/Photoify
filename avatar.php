@@ -6,11 +6,12 @@
     <?php require __DIR__.'/views/intro.php'; ?>
     <h1>Upload profile photo</h1>
         <form class="share-photos" action="app/users/upload.php" method="post" enctype="multipart/form-data">
+            <p class="small">Accepted filetypes: .jpg .jpeg .png Maxfilesize: 4MB</p>
             <div class="upload-file-style">
                 <label for="file-upload" class="custom-file-upload">
                <i class="far fa-user fa-lg"></i>
                Photo
-             </label>
+           </label>
              <input type="file"  value="upload file" name="profile_pic" id="file-upload" style="display:none;" accept=".png, .jpeg, .jpg" multiple required >
              <input id="uploadFile" placeholder=" No File Choosen" disabled="disabled" />
          </div>
