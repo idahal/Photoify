@@ -12,10 +12,6 @@ $statement = $pdo->prepare(
     'DELETE FROM users
     WHERE user_id = :user_id');
 
-if (!$statement){
-   die(var_dump($pdo->errorInfo()));
- }
-
 $statement->bindParam(':user_id', $userId, PDO::PARAM_INT);
 $statement->execute();
 
@@ -27,10 +23,14 @@ $statement->bindParam(':user_id', $userId, PDO::PARAM_INT);
 $statement->execute();
 
 //delete users likes
-$statement = $pdo->prepare(
-    'DELETE FROM likes
-    WHERE user_id = :user_id');
-$statement->bindParam(':user_id', $userId, PDO::PARAM_INT);
-$statement->execute();
+ $statement = $pdo->prepare(
+     'DELETE FROM likes
+      WHERE user_id = :user_id');
+ $statement->bindParam(':user_id', $userId, PDO::PARAM_INT);
+ $statement->execute();
+
+ if (!$statement){
+     die(var_dump($pdo->errorInfo()));
+ }
 }
 redirect('/app/users/logout.php');
