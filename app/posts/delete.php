@@ -5,10 +5,14 @@ declare(strict_types=1);
 require __DIR__.'/../autoload.php';
 
 //check if the user is login
-if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}
+if(!isset($_SESSION['user'])){ $errors[] = "You can only delete your own posts!";
+    $_SESSION['errors'] = $errors;redirect("/"); }
+    else { $user = $_SESSION['user'];}
 
 //  delete posts in the database.
-if (isset($_POST['post_id'])) {
+if (!isset($_POST['post_id'])) { $errors[] = "You can only delete your own posts!";
+    $_SESSION['errors'] = $errors;redirect("/"); }
+    else {
     $id = $_SESSION['user']['user_id'];
     $postId = $_POST['post_id'];
 
@@ -26,6 +30,6 @@ if (isset($_POST['post_id'])) {
      $statement->bindParam(':user_id', $id, PDO::PARAM_INT);
      $statement->execute();
      redirect('/mypage.php');
-     }
+ }
 
 redirect('/');

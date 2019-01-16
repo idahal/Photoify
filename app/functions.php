@@ -46,16 +46,19 @@ function postFeed() {
  *
  */
 function editPosts(){
-$config = require __DIR__.'/config.php';
-$pdo = new PDO($config['database_path']);
-$editPost = filter_var($_GET['post_id'],FILTER_SANITIZE_STRING);
-$statement = $pdo->prepare("SELECT * FROM posts WHERE post_id = $editPost");
-// execute the code
-$statement->execute();
-// fecth the data from the database, fetch_assic get a clean output
-$onePost = $statement->fetch(PDO::FETCH_ASSOC);
-return $onePost;
-}
+    $config = require __DIR__.'/config.php';
+    $pdo = new PDO($config['database_path']);
+    $editPost = filter_var($_GET['post_id'],FILTER_SANITIZE_STRING);
+    $statement = $pdo->prepare(
+        "SELECT *
+        FROM posts
+        WHERE post_id = $editPost");
+        // execute the code
+        $statement->execute();
+        // fecth the data from the database, fetch_assic get a clean output
+        $onePost = $statement->fetch(PDO::FETCH_ASSOC);
+        return $onePost;
+    }
 
 /**
  * function to print photor on my page
@@ -66,11 +69,15 @@ function myPosts(){
     $config = require __DIR__.'/config.php';
     $pdo = new PDO($config['database_path']);
     $userId = $_SESSION['user']['user_id'];
-    $statement = $pdo->prepare("SELECT * FROM posts WHERE user_id =  '$userId';");
-    $statement->execute();
-    $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
-    return $posts;
-}
+    $statement = $pdo->prepare(
+        "SELECT *
+        FROM posts
+        WHERE user_id =  '$userId'
+        ORDER BY date DESC;");
+        $statement->execute();
+        $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $posts;
+   }
 
 /**
  * function to show different users photos
@@ -82,31 +89,38 @@ function oneUser() {
     $pdo = new PDO($config['database_path']);
     $visitUser = filter_var($_GET['user_id'],FILTER_SANITIZE_STRING);
     // prepare the code to the database get the users name and profile pic
-    $statement = $pdo->prepare("SELECT * FROM users WHERE user_id = $visitUser");
-    // execute the code
-    $statement->execute();
-    // fecth the data from the database, fetch_assic get a clean output
-    $oneUser = $statement->fetch(PDO::FETCH_ASSOC);
-    return $oneUser;
-
-}
+    $statement = $pdo->prepare(
+        "SELECT *
+        FROM users
+        WHERE user_id = $visitUser");
+        // execute the code
+        $statement->execute();
+        // fecth the data from the database, fetch_assic get a clean output
+        $oneUser = $statement->fetch(PDO::FETCH_ASSOC);
+        return $oneUser;
+  }
 
 /**
  * prepare the code to the database get the users posts and content
  *
  *
  */
-function visitUser() {
-$config = require __DIR__.'/config.php';
-$pdo = new PDO($config['database_path']);
-$visitUser = filter_var($_GET['user_id'],FILTER_SANITIZE_STRING);
-$newstatement = $pdo->prepare("SELECT * FROM posts WHERE user_id = $visitUser");
-// execute the code
-$newstatement->execute();
-// fecth the data from the database, fetch_assic get a clean output
-$postsUser = $newstatement->fetchAll(PDO::FETCH_ASSOC);
-return $postsUser;
-}
+    function visitUser() {
+    $config = require __DIR__.'/config.php';
+    $pdo = new PDO($config['database_path']);
+    $visitUser = filter_var($_GET['user_id'],FILTER_SANITIZE_STRING);
+    $newstatement = $pdo->prepare(
+        "SELECT *
+        FROM posts
+        WHERE user_id = $visitUser
+        ORDER BY date DESC");
+        // execute the code
+        $newstatement->execute();
+        // fecth the data from the database, fetch_assic get a clean output
+        $postsUser = $newstatement->fetchAll(PDO::FETCH_ASSOC);
+        return $postsUser;
+    }
+
 
 // trying to get a function to get show if the post is liked or not
 // function selectLikes() {
