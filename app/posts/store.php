@@ -41,10 +41,10 @@ if (isset($_POST['content'],$_FILES['post'])) {
         $statement->execute();
 
         redirect('/');
-    } // -----------------------trying
+    }
         else {
             $_SESSION['errors'] = $errors;
             redirect('/upload_photo.php');
         }
-        // -----------------------trying
+
 }

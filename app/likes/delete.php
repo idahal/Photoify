@@ -11,7 +11,7 @@ if (isset($_POST['post_id'])) {
     $id = $_SESSION['user']['user_id'];
     $postId = $_POST['post_id'];
 
-// Dislike a post
+// dislike a post
  $statement = $pdo->prepare(
      'DELETE FROM likes
      WHERE post_id = :post_id
