@@ -1,7 +1,11 @@
 <?php require __DIR__.'/views/header.php'; ?>
 
 <!-- if user login show visit_user page -->
-<?php if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}?>
+<?php if (!isset($_SESSION['user'])) {
+    redirect("/");
+} else {
+    $user = $_SESSION['user'];
+}?>
 
 <?php if (isset($_GET['user_id'])):
     $oneUser =  oneUser();

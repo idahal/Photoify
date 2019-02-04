@@ -1,6 +1,10 @@
 <?php require __DIR__.'/views/header.php'; ?>
 
-<?php if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}?>
+<?php if (!isset($_SESSION['user'])) {
+    redirect("/");
+} else {
+    $user = $_SESSION['user'];
+}?>
 
 <article class="account-settings">
     <?php require __DIR__.'/views/intro.php'; ?>
@@ -83,5 +87,7 @@
         </form>
     </div>
 </article>
-<?php if(isset($_SESSION['error'])){ unset($_SESSION['error']) ;}; ?>
+<?php if (isset($_SESSION['error'])) {
+    unset($_SESSION['error']) ;
+}; ?>
 <?php require __DIR__.'/views/footer.php'; ?>

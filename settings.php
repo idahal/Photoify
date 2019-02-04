@@ -1,6 +1,10 @@
 <?php require __DIR__.'/views/header.php'; ?>
 
-<?php if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}?>
+<?php if (!isset($_SESSION['user'])) {
+    redirect("/");
+} else {
+    $user = $_SESSION['user'];
+}?>
 <!-- here the user can change names, bio and email -->
 <article>
     <form class="create-account" action="app/users/changes.php" method="post">

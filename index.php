@@ -3,7 +3,7 @@
 <article>
     <!-- If  the user is logged in -->
     <?php
-        if(isset($_SESSION['user'])):  ?>
+        if (isset($_SESSION['user'])):  ?>
     <?php require __DIR__.'/home.php'; ?>
 <!-- If the user is not logged in -->
     <?php else: ?>

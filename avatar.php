@@ -1,6 +1,10 @@
 <?php require __DIR__.'/views/header.php'; ?>
 
-<?php if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}?>
+<?php if (!isset($_SESSION['user'])) {
+    redirect("/");
+} else {
+    $user = $_SESSION['user'];
+}?>
 
 <article class="share-photos-page">
     <?php require __DIR__.'/views/intro.php'; ?>

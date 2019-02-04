@@ -5,18 +5,18 @@ require __DIR__.'/../autoload.php';
 
 if (isset($_POST['first_name'], $_POST['last_name'],$_POST['email'],$_POST['bio'])) {
     $id = $_SESSION['user']['user_id'];
-        $firstName = trim(filter_var($_POST['first_name'], FILTER_SANITIZE_STRING));
-        $lastName = trim(filter_var($_POST['last_name'], FILTER_SANITIZE_STRING));
-        $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
-        $bio = filter_var($_POST['bio'],FILTER_SANITIZE_STRING);
+    $firstName = trim(filter_var($_POST['first_name'], FILTER_SANITIZE_STRING));
+    $lastName = trim(filter_var($_POST['last_name'], FILTER_SANITIZE_STRING));
+    $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
+    $bio = filter_var($_POST['bio'], FILTER_SANITIZE_STRING);
 
-        $statement = $pdo->prepare(
+    $statement = $pdo->prepare(
         'UPDATE users
         SET first_name = :first_name, last_name = :last_name, email = :email, bio = :bio
-        WHERE user_id = :user_id');
+        WHERE user_id = :user_id'
+        );
 
-    if (!$statement)
-    {
+    if (!$statement) {
         die(var_dump($pdo->errorInfo()));
     }
 
@@ -33,7 +33,8 @@ if (isset($_POST['first_name'], $_POST['last_name'],$_POST['email'],$_POST['bio'
     $statement = $pdo->prepare(
         'SELECT *
         FROM users
-        WHERE email = :email');
+        WHERE email = :email'
+    );
     // bind the parameter to the if(isset) so it's exists
     $statement->bindParam(':email', $email);
     // execute the code
@@ -42,5 +43,4 @@ if (isset($_POST['first_name'], $_POST['last_name'],$_POST['email'],$_POST['bio'
     $user = $statement->fetch(PDO::FETCH_ASSOC);
     $_SESSION['user'] = $user;
     redirect('/mypage.php');
-
 }

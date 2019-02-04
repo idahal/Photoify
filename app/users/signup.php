@@ -23,8 +23,7 @@ $errors = [];
             $statement = $pdo->prepare('INSERT INTO users(first_name, last_name, email, password)
             VALUES (:first_name, :last_name, :email, :password)');
 
-            if (!$statement)
-            {
+            if (!$statement) {
                 die(var_dump($pdo->errorInfo()));
             }
 
@@ -34,7 +33,7 @@ $errors = [];
             $statement->bindParam(':email', $email, PDO::PARAM_STR);
             $statement->bindParam(':password', $password, PDO::PARAM_STR);
 
-            if(!$statement->execute()){
+            if (!$statement->execute()) {
                 $_SESSION['errors']= ['That email is already used. Try again.'];
                 redirect('/signup.php');
                 // alert('email already taken.');
@@ -43,4 +42,3 @@ $errors = [];
             redirect('/');
         }
     }
-?>

@@ -7,11 +7,11 @@ require __DIR__.'/../autoload.php';
 $errors = [];
 
 //check if user post data
-if(isset($_POST['email'], $_POST['password'])) {
+if (isset($_POST['email'], $_POST['password'])) {
     // check if email is ringt value, no weird characters
-    $email = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $password =  $_POST['password'];
-    if($email === '' || $password === ''){
+    if ($email === '' || $password === '') {
         $errors[]= 'You must enter the fields';
     };
     // prepare the code to the database
@@ -34,13 +34,13 @@ if(isset($_POST['email'], $_POST['password'])) {
         redirect('/');
     }
 
-    if (count($errors) > 0 ){
+    if (count($errors) > 0) {
         $_SESSION['errors'] = $errors;
         redirect('/');
     }
 
-    if (password_verify($_POST['password'], $user['password'])){
-         unset($user['password']);
+    if (password_verify($_POST['password'], $user['password'])) {
+        unset($user['password']);
         $_SESSION['user'] = $user;
         redirect('/');
     }

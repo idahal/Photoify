@@ -29,14 +29,15 @@
         $statement = $pdo->prepare(
             'SELECT * FROM likes
             WHERE post_id = :post_id
-            AND user_id = :user_id');
+            AND user_id = :user_id'
+        );
             $statement->bindParam(':post_id', $post['post_id'], PDO::PARAM_INT);
             $statement->bindParam(':user_id', $_SESSION['user']['user_id'], PDO::PARAM_INT);
             $statement->execute();
             $alreadyLiked = $statement->fetch(PDO::FETCH_ASSOC);
     ?>
             <!-- change button if the post is liked or not by the user -->
-        <?php if($alreadyLiked):?>
+        <?php if ($alreadyLiked):?>
             <form class="like-post" action="app/likes/delete.php" method="post">
                 <button type="submit" name="like" class="like">
                     <span style="color:red;">

@@ -1,6 +1,10 @@
 <?php require __DIR__.'/views/header.php'; ?>
 
-<?php if(!isset($_SESSION['user'])){ redirect("/"); } else { $user = $_SESSION['user'];}?>
+<?php if (!isset($_SESSION['user'])) {
+    redirect("/");
+} else {
+    $user = $_SESSION['user'];
+}?>
 <article>
 
 <form class="create-account" action="app/users/delete.php" method="post">
@@ -18,5 +22,7 @@
 </form>
 </article>
 
-<?php if(isset($_SESSION['error'])){ unset($_SESSION['error']) ;}; ?>
+<?php if (isset($_SESSION['error'])) {
+    unset($_SESSION['error']) ;
+}; ?>
 <?php require __DIR__.'/views/footer.php'; ?>
