@@ -1,1 +1,5 @@
-preset: recommended
+preset: psr2
+finder:
+  exclude:
+    - .git
+    - .gitconfig
