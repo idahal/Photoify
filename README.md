@@ -35,3 +35,6 @@ The project have been tested in:
 
 ## License
 This project is licensed under the MIT License.
+
+<a href="https://github.styleci.io/repos/161144066"><img src="https://github.styleci.io/repos/161144066/shield?branch=master" alt="StyleCI"></a>
+
