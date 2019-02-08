@@ -130,20 +130,3 @@ function oneUser()
         $postsUser = $newstatement->fetchAll(PDO::FETCH_ASSOC);
         return $postsUser;
     }
-
-
-// trying to get a function to show if the post is liked or not
-// function selectLikes() {
-//     // select likes from database
-//     $config = require __DIR__.'/config.php';
-//     $pdo = new PDO($config['database_path']);
-//     $statement = $pdo->prepare(
-//         'SELECT * FROM likes
-//         WHERE post_id = :post_id
-//         AND user_id = :user_id');
-//         $statement->bindParam(':post_id', $post['post_id'], PDO::PARAM_INT);
-//         $statement->bindParam(':user_id', $_SESSION['user']['user_id'], PDO::PARAM_INT);
-//         $statement->execute();
-//         $alreadyLiked = $statement->fetch(PDO::FETCH_ASSOC);
-//         return $alreadyLiked;
-//     }

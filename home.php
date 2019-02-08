@@ -25,7 +25,7 @@
                     <img class="gallery-pics" src="image/post/<?php echo $post['post'];?>" alt="photoify">
                     <p><b><?php echo $post['first_name'].' '. $post['last_name']?></b><?php echo ': '. $post['content'];?></p>
     <?php
-    // get the likes from the database. I have tried to create a function for these, but it did't work.
+    // get the likes from the database.
         $statement = $pdo->prepare(
             'SELECT * FROM likes
             WHERE post_id = :post_id
